@@ -16,8 +16,8 @@ public record FilmGetResponse(String message,
 							  String runtime,
 							  String summary,
 							  String trailerLink,
-							  List<String> cast,
-							  Map<String, String> crew
+							  List<String> cast
+							  /*Map<String, String> crew*/
 							  /*List<ReviewEntity> reviewId*/) implements Response {
 
 }

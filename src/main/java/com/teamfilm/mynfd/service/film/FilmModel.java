@@ -7,7 +7,6 @@ import java.util.List;
 
 @Builder
 public record FilmModel(int id,
-                        String imdbId,
                         String title,
                         String thumbnailSrc,
                         int year,
@@ -23,7 +22,6 @@ public record FilmModel(int id,
     public FilmEntity toEntity() {
         return FilmEntity.builder()
                 .id(id)
-                .imdbId(imdbId)
                 .title(title)
                 .thumbnailSrc(thumbnailSrc)
                 .year(year)
@@ -41,7 +39,6 @@ public record FilmModel(int id,
     public static FilmModel fromEntity(FilmEntity entity) {
         return FilmModel.builder()
                 .id(entity.getId())
-                .imdbId(entity.getImdbId())
                 .title(entity.getTitle())
                 .thumbnailSrc(entity.getThumbnailSrc())
                 .year(entity.getYear())

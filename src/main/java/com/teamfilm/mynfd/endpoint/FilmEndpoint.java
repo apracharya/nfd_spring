@@ -3,6 +3,7 @@ package com.teamfilm.mynfd.endpoint;
 import com.teamfilm.mynfd.exception.AlreadyExistsException;
 import com.teamfilm.mynfd.exception.NotFoundException;
 import com.teamfilm.mynfd.request.film.FilmPostRequest;
+import com.teamfilm.mynfd.request.film.FilmPutRequest;
 import com.teamfilm.mynfd.request.film.FilmRequestMapper;
 import com.teamfilm.mynfd.response.ErrorResponse;
 import com.teamfilm.mynfd.response.Response;
@@ -30,34 +31,30 @@ public class FilmEndpoint {
         this.filmService = filmService;
     }
 
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<Response> createFilm(@RequestBody FilmPostRequest request) {
         try {
             FilmModel model = FilmRequestMapper.toModel(request);
             FilmPostResponse response = FilmResponseMapper.toPostResponse(filmService.createFilm(model));
-            System.out.println("OK!");
             return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (AlreadyExistsException e) {
-            System.out.println("NOT!!");
             ErrorResponse response = new ErrorResponse("Film Already Exists");
             return new ResponseEntity<>(response, HttpStatus.PRECONDITION_FAILED);
         } catch (Exception e) {
-            System.out.println("NOT OK!");
             return new ResponseEntity<>(new ErrorResponse(e.getMessage()), HttpStatus.PRECONDITION_FAILED);
         }
     }
 
-    @GetMapping
+    @GetMapping("read")
     public ResponseEntity<List<FilmModel>> readAllFilms() {
         try {
             return new ResponseEntity<>(filmService.readAllFilms(), HttpStatus.OK);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
             return new ResponseEntity<>(Collections.emptyList(), HttpStatus.OK);
         }
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("read/{id}")
     public ResponseEntity<Response> readFilm(@PathVariable("id") int filmId) {
         try {
 
@@ -74,13 +71,14 @@ public class FilmEndpoint {
         }
     }
 
-    @PutMapping
-    public ResponseEntity<Response> updateFilm(@RequestBody FilmModel film, @RequestParam("id") int filmId) {
-        FilmPutResponse response = FilmResponseMapper.toPutResponse(filmService.updateFilm(film, filmId));
+    @PutMapping("update/{id}")
+    public ResponseEntity<Response> updateFilm(@RequestBody FilmPutRequest request, @PathVariable("id") int filmId) {
+        FilmModel model = FilmRequestMapper.toModel(request);
+        FilmPutResponse response = FilmResponseMapper.toPutResponse(filmService.updateFilm(model, filmId));
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("delete/{id}")
     public void deleteFilm(@PathVariable("id") int filmId) {
         filmService.deleteFilm(filmId);
     }

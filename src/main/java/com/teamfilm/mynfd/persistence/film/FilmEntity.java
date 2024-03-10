@@ -7,7 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
-import java.util.Map;
 
 @Builder
 @Data
@@ -21,18 +20,14 @@ public class FilmEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @Column(name = "imdb_id")
-    private String imdbId;
-
     @Column(name = "thumbnil_src")
     private String thumbnailSrc;
 
     @Column(name = "title", nullable = false, length = 100)
     private String title;
 
-
     @Column(name = "year")
-    private int year;
+    private Integer year;
 
     @Column(name = "genre")
     private List<String> genre;

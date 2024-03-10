@@ -6,8 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 @Builder
-public record FilmPostRequest(String imdbId,
-							  String title,
+public record FilmPostRequest(String title,
 							  String thumbnailSrc,
 							  int year,
 							  List<String> genre,

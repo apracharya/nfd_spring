@@ -8,7 +8,6 @@ import java.util.Map;
 
 @Builder
 public record FilmPostResponse(String message,
-							   String imdbId,
 							   String title,
 							   String thumbnailSrc,
 							   int year,
