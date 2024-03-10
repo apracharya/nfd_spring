@@ -1,19 +1,13 @@
 package com.teamfilm.mynfd.service.film;
 
-import com.teamfilm.mynfd.exception.NotFoundException;
-import com.teamfilm.mynfd.exception.ResourceNotFoundException;
 import com.teamfilm.mynfd.persistence.film.FilmEntity;
 import com.teamfilm.mynfd.persistence.film.FilmRepository;
-import org.hibernate.annotations.NotFound;
-import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
 
-import static java.util.Arrays.stream;
-
-@Service
+@Component
 public class FilmServiceImplementation implements FilmService {
 
     private final FilmRepository filmRepository;
@@ -42,7 +36,6 @@ public class FilmServiceImplementation implements FilmService {
         movie.setTrailerLink(film.trailerLink());
         movie.setCast(film.cast());
         movie.setRating(film.rating());
-//        FilmEntity entity = film.toEntity();
         FilmEntity updated = filmRepository.save(movie);
         return FilmModel.fromEntity(updated);
     }

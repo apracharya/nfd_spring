@@ -3,8 +3,7 @@ package com.teamfilm.mynfd.request.film;
 import java.util.List;
 import java.util.Map;
 
-public record FilmPutRequest(String imdbId,
-							 String title,
+public record FilmPutRequest(String title,
 							 String thumbnailSrc,
 							 int year,
 							 List<String> genre,
@@ -12,7 +11,7 @@ public record FilmPutRequest(String imdbId,
 							 String runtime,
 							 String summary,
 							 String trailerLink,
-							 List<String> cast,
-							 Map<String, String> crew) {
+							 List<String> cast
+							 /*Map<String, String> crew*/) {
 
 }

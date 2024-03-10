@@ -8,7 +8,6 @@ import java.util.Map;
 
 @Builder
 public record FilmPutResponse(String message,
-							  String imdbId,
 							  String title,
 							  String thumbnailSrc,
 							  int year,
@@ -17,7 +16,7 @@ public record FilmPutResponse(String message,
 							  String runtime,
 							  String summary,
 							  String trailerLink,
-							  List<String> cast,
-							  Map<String, String> crew) implements Response {
+							  List<String> cast
+							  /*Map<String, String> crew*/) implements Response {
 
 }

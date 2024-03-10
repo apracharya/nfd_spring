@@ -10,7 +10,6 @@ public class FilmRequestMapper {
 	
 	public static FilmModel toModel(FilmPostRequest request) {
 		return FilmModel.builder()
-				.imdbId(request.imdbId())
 				.title(request.title())
 				.thumbnailSrc(request.thumbnailSrc())
 				.year(request.year())
@@ -26,7 +25,6 @@ public class FilmRequestMapper {
 	
 	public static FilmModel toModel(FilmPutRequest request) {
 		return FilmModel.builder()
-				.imdbId(request.imdbId())
 				.title(request.title())
 				.thumbnailSrc(request.thumbnailSrc())
 				.year(request.year())

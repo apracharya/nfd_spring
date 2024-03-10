@@ -11,7 +11,6 @@ public class FilmResponseMapper {
 	public static FilmPostResponse toPostResponse(FilmModel response) {
 		return FilmPostResponse.builder()
 				.message("Film created")
-				.imdbId(response.imdbId())
 				.title(response.title())
 				.thumbnailSrc(response.thumbnailSrc())
 				.year(response.year())
@@ -69,7 +68,6 @@ public class FilmResponseMapper {
 	public static FilmPutResponse toPutResponse(FilmModel response) {
 		return FilmPutResponse.builder()
 				.message("Film updated")
-				.imdbId(response.imdbId())
 				.title(response.title())
 				.thumbnailSrc(response.thumbnailSrc())
 				.year(response.year())
