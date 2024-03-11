@@ -10,18 +10,18 @@ public class UserRequestMapper {
 	
 	public static UserModel toModel(UserPostRequest request) {
 		return UserModel.builder()
+				.username(request.username())
 				.firstName(request.firstName())
 				.lastName(request.lastName())
-				.username(request.username())
 				.password(request.password())
 				.build();
 	}
 	
 	public static UserModel toModel(UserPutRequest request) {
 		return UserModel.builder()
+				.username(request.username())
 				.firstName(request.firstName())
 				.lastName(request.lastName())
-				.username(request.username())
 				.password(request.password())
 				.build();
 	}

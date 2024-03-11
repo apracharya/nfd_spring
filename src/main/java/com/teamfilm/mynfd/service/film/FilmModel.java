@@ -1,56 +1,26 @@
 package com.teamfilm.mynfd.service.film;
 
+import com.teamfilm.mynfd.persistence.category.CategoryEntity;
 import com.teamfilm.mynfd.persistence.film.FilmEntity;
-import lombok.Builder;
+import com.teamfilm.mynfd.service.category.CategoryModel;
+import lombok.*;
 
 import java.util.List;
 
-@Builder
-public record FilmModel(int id,
-                        String title,
-                        String thumbnailSrc,
-                        int year,
-                        List<String> genre,
-                        String runtime,
-                        String summary,
-                        String trailerLink,
-                        List<String> cast,
-                        /*Map<String, String>crew,*/
-                        double rating
-                        /*List<ReviewEntity> reviewId*/) {
+@Data
+@NoArgsConstructor
+public class FilmModel {
 
-    public FilmEntity toEntity() {
-        return FilmEntity.builder()
-                .id(id)
-                .title(title)
-                .thumbnailSrc(thumbnailSrc)
-                .year(year)
-                .genre(genre)
-                .runtime(runtime)
-                .summary(summary)
-                .trailerLink(trailerLink)
-                .cast(cast)
-//                .crew(crew)
-                .rating(rating)
-//                .reviewId(reviewId)
-                .build();
-    }
-
-    public static FilmModel fromEntity(FilmEntity entity) {
-        return FilmModel.builder()
-                .id(entity.getId())
-                .title(entity.getTitle())
-                .thumbnailSrc(entity.getThumbnailSrc())
-                .year(entity.getYear())
-                .genre(entity.getGenre())
-                .runtime(entity.getRuntime())
-                .summary(entity.getSummary())
-                .trailerLink(entity.getTrailerLink())
-                .cast(entity.getCast())
-//                .crew(entity.getCrew())
-                .rating(entity.getRating())
-//                .reviewId(entity.getReviewId())
-                .build();
-    }
+    String title;
+    String thumbnailSrc;
+    int year;
+    String runtime;
+    String summary;
+    String trailerLink;
+    List<String> cast;
+    double rating;
+    CategoryModel category;
+    String director;
+    String producer;
 
 }

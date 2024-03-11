@@ -1,17 +1,17 @@
 package com.teamfilm.mynfd.response.film;
 
+import com.teamfilm.mynfd.persistence.category.CategoryEntity;
 import com.teamfilm.mynfd.response.Response;
 import lombok.Builder;
 
 import java.util.List;
-import java.util.Map;
 
 @Builder
 public record FilmPutResponse(String message,
 							  String title,
 							  String thumbnailSrc,
 							  int year,
-							  List<String> genre,
+							  CategoryEntity category,
 							  double rating,
 							  String runtime,
 							  String summary,
