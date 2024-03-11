@@ -10,9 +10,12 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/posts")
 public class PostEndpoint {
-    @Autowired
-    private PostService postService;
 
+    private final PostService postService;
+
+    public PostEndpoint(PostService postService) {
+        this.postService = postService;
+    }
 
     @PostMapping("/create/category/{categoryId}")
     public ResponseEntity<PostModel> createPost(@RequestBody PostModel post, @PathVariable("categoryId") int categoryId) {

@@ -1,70 +1,65 @@
 package com.teamfilm.mynfd.endpoint;
 
+import com.teamfilm.mynfd.response.ApiResponse;
 import com.teamfilm.mynfd.service.film.FilmModel;
 import com.teamfilm.mynfd.service.film.FilmService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
+@CrossOrigin
 @RestController
 @RequestMapping("/films")
 public class FilmEndpoint {
 
-    @Autowired
-    private FilmService filmService;
+    private final FilmService filmService;
 
+    public FilmEndpoint(FilmService filmService) {
+        this.filmService = filmService;
+    }
 
+    // create film
     @PostMapping("/create/category/{categoryId}")
     public ResponseEntity<FilmModel> createFilm(@RequestBody FilmModel film, @PathVariable("categoryId") int categoryId) {
         FilmModel model = filmService.createFilm(film, categoryId);
         return new ResponseEntity<>(model, HttpStatus.CREATED);
     }
-//
-//    @GetMapping("read")
-//    public ResponseEntity<List<FilmModel>> readAllFilms() {
-//        try {
-//            return new ResponseEntity<>(filmService.readAllFilms(), HttpStatus.OK);
-//        } catch (Exception e) {
-//            log.error("user create: {}", e.getMessage());
-//            return new ResponseEntity<>(Collections.emptyList(), HttpStatus.OK);
-//        }
-//    }
-//
-//    @GetMapping("read/{id}")
-//    public ResponseEntity<Response> readFilm(@PathVariable("id") int filmId) {
-//        try {
-//
-//            FilmGetResponse response = filmService.readFilm(filmId)
-//                    .map(FilmResponseMapper::toGetResponse)
-//                    .orElseThrow(NotFoundException::new);
-//            return ResponseEntity.ok(response);
-//        } catch(NotFoundException e) {
-//            Response response = new ErrorResponse("Film Not found");
-//            return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
-//        } catch (Exception e) {
-//            log.error("user read: {}", e.getMessage());
-//            Response response = new ErrorResponse("error");
-//            return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
-//        }
-//    }
-//
-//    @PutMapping("update/{id}")
-//    public ResponseEntity<Response> updateFilm(@RequestBody FilmPutRequest request, @PathVariable("id") int filmId) {
-//        try {
-//            FilmModel model = FilmRequestMapper.toModel(request);
-//            FilmPutResponse response = FilmResponseMapper.toPutResponse(filmService.updateFilm(model, filmId));
-//            return new ResponseEntity<>(response, HttpStatus.OK);
-//        } catch (NotFoundException e) {
-//            return new ResponseEntity<>(new ErrorResponse("Film not found"), HttpStatus.PRECONDITION_FAILED);
-//        } catch (Exception e) {
-//            log.error("user update: {}", e.getMessage());
-//            return new ResponseEntity<>(new ErrorResponse(e.getMessage()), HttpStatus.PRECONDITION_FAILED);
-//        }
-//    }
-//
-//    @DeleteMapping("delete/{id}")
-//    public void deleteFilm(@PathVariable("id") int filmId) {
-//        filmService.deleteFilm(filmId);
-//    }
+
+
+    // read films by category
+    @GetMapping("/read/category/{categoryId}")
+    public ResponseEntity<List<FilmModel>> readFilmsByCategory(@PathVariable("categoryId") int categoryId){
+        List<FilmModel> films = filmService.readFilmsByCategory(categoryId);
+        return new ResponseEntity<>(films, HttpStatus.OK);
+    }
+
+    // read all films
+    @GetMapping("/read")
+    public ResponseEntity<List<FilmModel>> readAllFilms() {
+        return new ResponseEntity<>(filmService.readAllFilms(), HttpStatus.OK);
+    }
+
+    // read specific film
+    @GetMapping("read/{filmId}")
+    public ResponseEntity<FilmModel> readFilm(@PathVariable("filmId") int filmId) {
+        FilmModel film = filmService.readFilm(filmId);
+        return new ResponseEntity<>(film, HttpStatus.OK);
+
+    }
+
+    // update film
+    @PutMapping("update/{filmId}")
+    public ResponseEntity<FilmModel> updateFilm(@RequestBody FilmModel film, @PathVariable("filmId") int filmId) {
+        FilmModel updated = filmService.updateFilm(film, filmId);
+        return new ResponseEntity<>(updated, HttpStatus.OK);
+    }
+
+    // delete film
+    @DeleteMapping("delete/{id}")
+    public ApiResponse deleteFilm(@PathVariable("id") int filmId) {
+        filmService.deleteFilm(filmId);
+        return new ApiResponse("Film deleted successfully.", true);
+    }
 }

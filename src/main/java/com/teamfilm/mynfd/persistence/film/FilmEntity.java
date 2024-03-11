@@ -4,7 +4,9 @@ import com.teamfilm.mynfd.persistence.category.CategoryEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Entity
 @Table(name = "films")

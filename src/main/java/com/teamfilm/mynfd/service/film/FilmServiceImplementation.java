@@ -1,6 +1,7 @@
 package com.teamfilm.mynfd.service.film;
 
 import com.teamfilm.mynfd.exception.NotFoundException;
+import com.teamfilm.mynfd.exception.ResourceNotFoundException;
 import com.teamfilm.mynfd.persistence.category.CategoryEntity;
 import com.teamfilm.mynfd.persistence.category.CategoryRepository;
 import com.teamfilm.mynfd.persistence.film.FilmEntity;
@@ -14,11 +15,11 @@ import java.util.Optional;
 @Component
 public class FilmServiceImplementation implements FilmService {
 
-    private FilmRepository filmRepository;
+    private final FilmRepository filmRepository;
 
-    private CategoryRepository categoryRepository;
+    private final CategoryRepository categoryRepository;
 
-    private ModelMapper modelMapper;
+    private final ModelMapper modelMapper;
 
     public FilmServiceImplementation(FilmRepository filmRepository, CategoryRepository categoryRepository, ModelMapper modelMapper) {
         this.filmRepository = filmRepository;
@@ -30,7 +31,7 @@ public class FilmServiceImplementation implements FilmService {
     public FilmModel createFilm(FilmModel film, int categoryId) {
 
         CategoryEntity category = categoryRepository.findById(categoryId)
-                .orElseThrow(NotFoundException::new);
+                .orElseThrow(() -> new ResourceNotFoundException("Category ", "category id", categoryId));
 
         FilmEntity entity = modelMapper.map(film, FilmEntity.class);
         entity.setThumbnailSrc("default.png");
@@ -42,32 +43,60 @@ public class FilmServiceImplementation implements FilmService {
     }
 
     @Override
-    public Optional<FilmModel> readFilm(int filmId) {
-        return Optional.empty();
+    public FilmModel readFilm(int filmId) {
+        FilmEntity film = filmRepository.findById(filmId)
+                .orElseThrow(() -> new ResourceNotFoundException("Film", "film id", filmId));
+        return modelMapper.map(film, FilmModel.class);
     }
 
     @Override
     public FilmModel updateFilm(FilmModel film, Integer filmId) {
-        return null;
+        FilmEntity entity = filmRepository.findById(filmId)
+                .orElseThrow(() -> new ResourceNotFoundException("Film", "film id", filmId));
+        entity.setTitle(film.getTitle());
+        entity.setThumbnailSrc(film.getThumbnailSrc());
+        entity.setYear(film.getYear());
+        entity.setRuntime(film.getRuntime());
+        entity.setSummary(film.getSummary());
+        entity.setTrailerLink(film.getTrailerLink());
+        entity.setCast(film.getCast());
+        entity.setRating(film.getRating());
+        entity.setDirector(film.getDirector());
+        entity.setProducer(film.getProducer());
+
+//        entity.setCategory(modelMapper.map(film.getCategory(), CategoryEntity.class));
+
+        FilmEntity updated = filmRepository.save(entity);
+        return modelMapper.map(updated, FilmModel.class);
     }
 
     @Override
     public List<FilmModel> readAllFilms() {
-        return null;
+        List<FilmEntity> entity = filmRepository.findAll();
+        return entity.stream()
+                .map(film -> modelMapper.map(film, FilmModel.class))
+                .toList();
     }
 
     @Override
     public void deleteFilm(int filmId) {
-
+        FilmEntity film = filmRepository.findById(filmId)
+                        .orElseThrow(() -> new ResourceNotFoundException("Film", "film id", filmId));
+        filmRepository.delete(film);
     }
 
     @Override
-    public List<FilmEntity> readFilmByCategory(int categoryId) {
-        return null;
+    public List<FilmModel> readFilmsByCategory(int categoryId) {
+        CategoryEntity category = categoryRepository.findById(categoryId)
+                .orElseThrow(() -> new ResourceNotFoundException("Category", "category id", categoryId));
+        List<FilmEntity> entity = filmRepository.findByCategory(category);
+        return entity.stream()
+                .map(film -> modelMapper.map(film, FilmModel.class))
+                .toList();
     }
 
     @Override
-    public List<FilmEntity> searchFilm(String keyword) {
+    public List<FilmModel> searchFilm(String keyword) {
         return null;
     }
 
