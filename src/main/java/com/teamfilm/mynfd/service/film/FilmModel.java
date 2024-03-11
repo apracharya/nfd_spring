@@ -1,16 +1,15 @@
 package com.teamfilm.mynfd.service.film;
 
-import com.teamfilm.mynfd.persistence.category.CategoryEntity;
-import com.teamfilm.mynfd.persistence.film.FilmEntity;
 import com.teamfilm.mynfd.service.category.CategoryModel;
-import lombok.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Data
 @NoArgsConstructor
 public class FilmModel {
-
+    int id;
     String title;
     String thumbnailSrc;
     int year;

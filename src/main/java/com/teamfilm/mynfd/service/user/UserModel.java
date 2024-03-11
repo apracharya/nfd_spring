@@ -6,7 +6,8 @@ import jakarta.validation.constraints.Size;
 import lombok.Builder;
 
 @Builder
-public record UserModel(@Size(min=5, max = 25) String username,
+public record UserModel(@Size(min=5, max = 25)
+                        String username,
                         String firstName,
                         String lastName,
                         String password) {
