@@ -1,8 +1,8 @@
 package com.teamfilm.mynfd.request.user;
 
-public record UserPutRequest(String firstName,
+public record UserPutRequest(String username,
+							 String firstName,
 							 String lastName,
-							 String username,
 							 String password) {
 
 }

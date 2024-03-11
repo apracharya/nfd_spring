@@ -5,9 +5,9 @@ import lombok.Builder;
 
 @Builder
 public record UserGetResponse(String message,
+							  String username,
 							  String firstName,
 							  String lastName,
-							  String username,
 							  String password) implements Response {
 
 }

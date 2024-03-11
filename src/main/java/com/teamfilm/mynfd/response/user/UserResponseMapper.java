@@ -11,7 +11,6 @@ public class UserResponseMapper {
 	public static UserPostResponse toPostResponse(UserModel user) {
 		return UserPostResponse.builder()
 				.message("User created")
-				.id(user.id())
 				.firstName(user.firstName())
 				.lastName(user.lastName())
 				.username(user.username())
@@ -32,12 +31,10 @@ public class UserResponseMapper {
 	public static UserPutResponse toPutResponse(UserModel user) {
 		return UserPutResponse.builder()
 				.message("User updated")
-				.id(user.id())
 				.firstName(user.firstName())
 				.lastName(user.lastName())
 				.username(user.username())
 				.password(user.password())
 				.build();
 	}
-	
 }

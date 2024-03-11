@@ -13,6 +13,7 @@ import com.teamfilm.mynfd.response.user.UserPutResponse;
 import com.teamfilm.mynfd.response.user.UserResponseMapper;
 import com.teamfilm.mynfd.service.user.UserModel;
 import com.teamfilm.mynfd.service.user.UserService;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -35,7 +36,7 @@ public class UserEndpoint {
 
 
     @PostMapping("/create")
-    public ResponseEntity<Response> createFilm(@RequestBody UserPostRequest user) {
+    public ResponseEntity<Response> createFilm(@Valid @RequestBody UserPostRequest user) {
         try {
             UserModel model = UserRequestMapper.toModel(user);
             UserModel created = userService.createUser(model);
@@ -70,9 +71,9 @@ public class UserEndpoint {
 
 
     @GetMapping("/read/{id}")
-    public ResponseEntity<Response> readFilm(@PathVariable("id") int userId) {
+    public ResponseEntity<Response> readFilm(@PathVariable("id") String username) {
         try {
-            UserGetResponse response = userService.readUser(userId)
+            UserGetResponse response = userService.readUser(username)
                     .map(UserResponseMapper::toGetResponse)
                     .orElseThrow(NotFoundException::new);
             return ResponseEntity.ok(response);
@@ -88,14 +89,20 @@ public class UserEndpoint {
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<Response> updateUser(@RequestBody UserPutRequest request, @PathVariable("id") int userId) {
-        UserModel model = UserRequestMapper.toModel(request);
-        UserPutResponse response = UserResponseMapper.toPutResponse(userService.updateUser(model, userId));
-        return new ResponseEntity<>(response, HttpStatus.OK);
+    public ResponseEntity<Response> updateUser(@Valid @RequestBody UserPutRequest request, @PathVariable("id") String username) {
+        try {
+            UserModel model = UserRequestMapper.toModel(request);
+            UserPutResponse response = UserResponseMapper.toPutResponse(userService.updateUser(model, username));
+            return new ResponseEntity<>(response, HttpStatus.OK);
+        } catch (NotFoundException e) {
+            return new ResponseEntity<>(new ErrorResponse("user not found"), HttpStatus.PRECONDITION_FAILED);
+        } catch (Exception e) {
+            return new ResponseEntity<>(new ErrorResponse(e.getMessage()), HttpStatus.PRECONDITION_FAILED);
+        }
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deleteUser(@PathVariable("id") int id) {
-        userService.deleteUser(id);
+    public void deleteUser(@PathVariable("id") String username) {
+        userService.deleteUser(username);
     }
 }

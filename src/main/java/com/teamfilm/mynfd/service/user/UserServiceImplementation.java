@@ -1,5 +1,7 @@
 package com.teamfilm.mynfd.service.user;
 
+import com.teamfilm.mynfd.exception.AlreadyExistsException;
+import com.teamfilm.mynfd.exception.NotFoundException;
 import com.teamfilm.mynfd.persistence.user.UserEntity;
 import com.teamfilm.mynfd.persistence.user.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -23,19 +25,23 @@ public class UserServiceImplementation implements UserService {
     @Override
     public UserModel createUser(UserModel user) {
         UserEntity entity = new UserEntity(
-                user.id(),
+                user.username(),
                 user.firstName(),
                 user.lastName(),
-                user.username(),
                 this.passwordEncoder.encode(user.password())
         );
-        UserEntity created = userRepository.save(entity);
-        return UserModel.fromEntity(created);
+
+        if( ! userRepository.existsById(entity.getUsername())) {
+            UserEntity created = userRepository.save(entity);
+            return UserModel.fromEntity(created);
+        } else {
+            throw new AlreadyExistsException("User already exists");
+        }
     }
 
     @Override
-    public Optional<UserModel> readUser(int id) {
-        return userRepository.findById(id)
+    public Optional<UserModel> readUser(String username) {
+        return userRepository.findById(username)
                 .map(UserModel::fromEntity);
     }
 
@@ -48,9 +54,9 @@ public class UserServiceImplementation implements UserService {
     }
 
     @Override
-    public UserModel updateUser(UserModel userModel, int userId) {
-        UserEntity user = userRepository.findById(userId)
-                .orElseThrow();
+    public UserModel updateUser(UserModel userModel, String username) {
+        UserEntity user = userRepository.findById(username)
+                .orElseThrow(() -> new NotFoundException("Film with username " + username + " not found"));
         user.setFirstName(userModel.firstName());
         user.setLastName(userModel.lastName());
         user.setPassword(this.passwordEncoder.encode(userModel.password()));
@@ -60,8 +66,8 @@ public class UserServiceImplementation implements UserService {
     }
 
     @Override
-    public void deleteUser(int id) {
-        userRepository.deleteById(id);
+    public void deleteUser(String username) {
+        userRepository.deleteById(username);
     }
 
     @Override

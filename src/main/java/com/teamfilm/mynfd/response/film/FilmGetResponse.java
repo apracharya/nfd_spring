@@ -1,5 +1,6 @@
 package com.teamfilm.mynfd.response.film;
 
+import com.teamfilm.mynfd.persistence.category.CategoryEntity;
 import com.teamfilm.mynfd.response.Response;
 import lombok.Builder;
 
@@ -11,13 +12,13 @@ public record FilmGetResponse(String message,
 							  String title,
 							  String thumbnailSrc,
 							  int year,
-							  List<String> genre,
+							  CategoryEntity category,
 							  double rating,
 							  String runtime,
 							  String summary,
 							  String trailerLink,
-							  List<String> cast
-							  /*Map<String, String> crew*/
-							  /*List<ReviewEntity> reviewId*/) implements Response {
+							  List<String> cast,
+							  String director,
+							  String producer) implements Response {
 
 }

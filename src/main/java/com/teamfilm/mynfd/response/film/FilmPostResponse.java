@@ -1,6 +1,8 @@
 package com.teamfilm.mynfd.response.film;
 
+import com.teamfilm.mynfd.persistence.category.CategoryEntity;
 import com.teamfilm.mynfd.response.Response;
+import com.teamfilm.mynfd.service.category.CategoryModel;
 import lombok.Builder;
 
 import java.util.List;
@@ -11,7 +13,7 @@ public record FilmPostResponse(String message,
 							   String title,
 							   String thumbnailSrc,
 							   int year,
-							   List<String> genre,
+							   CategoryModel category,
 							   double rating,
 							   String runtime,
 							   String summary,

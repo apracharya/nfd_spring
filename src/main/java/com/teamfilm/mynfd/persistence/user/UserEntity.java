@@ -13,9 +13,9 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "users")
 public class UserEntity {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private String username;
 
     @Column(name = "first_name")
     private String firstName;
@@ -23,9 +23,7 @@ public class UserEntity {
     @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "username", nullable = false, length = 100)
-    private String username;
-
+    // password null validation is done by BCryptEncoder
     @Column(name = "password")
     private String password;
 

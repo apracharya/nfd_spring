@@ -1,33 +1,32 @@
 package com.teamfilm.mynfd.service.user;
 
 import com.teamfilm.mynfd.persistence.user.UserEntity;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.Builder;
 
 @Builder
-public record UserModel(int id,
+public record UserModel(@Size(min=5, max = 25) String username,
                         String firstName,
                         String lastName,
-                        String username,
                         String password) {
 
 
 
     public UserEntity toEntity() {
         return UserEntity.builder()
-                .id(id)
+                .username(username)
                 .firstName(firstName)
                 .lastName(lastName)
-                .username(username)
                 .password(password)
                 .build();
     }
 
     public static UserModel fromEntity(UserEntity entity) {
         return UserModel.builder()
-                .id(entity.getId())
+                .username(entity.getUsername())
                 .firstName(entity.getFirstName())
                 .lastName(entity.getLastName())
-                .username(entity.getUsername())
                 .password(entity.getPassword())
                 .build();
     }
