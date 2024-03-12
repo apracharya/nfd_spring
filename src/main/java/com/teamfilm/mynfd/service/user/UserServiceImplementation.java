@@ -2,54 +2,62 @@ package com.teamfilm.mynfd.service.user;
 
 import com.teamfilm.mynfd.exception.AlreadyExistsException;
 import com.teamfilm.mynfd.exception.NotFoundException;
+import com.teamfilm.mynfd.exception.ResourceNotFoundException;
+import com.teamfilm.mynfd.persistence.review.ReviewEntity;
 import com.teamfilm.mynfd.persistence.user.UserEntity;
 import com.teamfilm.mynfd.persistence.user.UserRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.util.Base64;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Component
 public class UserServiceImplementation implements UserService {
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
+    private final ModelMapper modelMapper;
 
-    public UserServiceImplementation(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+    public UserServiceImplementation(UserRepository userRepository, PasswordEncoder passwordEncoder, ModelMapper modelMapper) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
+        this.modelMapper = modelMapper;
     }
 
     @Override
     public UserModel createUser(UserModel user) {
         UserEntity entity = new UserEntity(
-                user.username(),
-                user.firstName(),
-                user.lastName(),
-                this.passwordEncoder.encode(user.password())
+                user.getUsername(),
+                user.getFirstName(),
+                user.getLastName(),
+                this.passwordEncoder.encode(user.getPassword()),
+                user.getReviews()
         );
 
         if( ! userRepository.existsById(entity.getUsername())) {
             UserEntity created = userRepository.save(entity);
-            return UserModel.fromEntity(created);
+            return modelMapper.map(created, UserModel.class);
         } else {
             throw new AlreadyExistsException("User already exists");
         }
     }
 
     @Override
-    public Optional<UserModel> readUser(String username) {
-        return userRepository.findById(username)
-                .map(UserModel::fromEntity);
+    public UserModel readUser(String username) {
+        UserEntity entity = userRepository.findById(username)
+                .orElseThrow(() -> new ResourceNotFoundException("User", "with id", username));
+        return modelMapper.map(entity, UserModel.class);
     }
 
     @Override
     public List<UserModel> readAllUsers(){
         return userRepository.findAll()
                 .stream()
-                .map(UserModel::fromEntity)
+                .map(user -> modelMapper.map(user, UserModel.class))
                 .toList();
     }
 
@@ -57,12 +65,12 @@ public class UserServiceImplementation implements UserService {
     public UserModel updateUser(UserModel userModel, String username) {
         UserEntity user = userRepository.findById(username)
                 .orElseThrow(() -> new NotFoundException("Film with username " + username + " not found"));
-        user.setFirstName(userModel.firstName());
-        user.setLastName(userModel.lastName());
-        user.setPassword(this.passwordEncoder.encode(userModel.password()));
-        user.setUsername(userModel.username());
+        user.setFirstName(userModel.getFirstName());
+        user.setLastName(userModel.getLastName());
+        user.setPassword(this.passwordEncoder.encode(userModel.getPassword()));
+        user.setUsername(userModel.getUsername());
         UserEntity updated = userRepository.save(user);
-        return UserModel.fromEntity(updated);
+        return modelMapper.map(updated, UserModel.class);
     }
 
     @Override

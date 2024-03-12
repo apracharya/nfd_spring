@@ -1,16 +1,6 @@
 package com.teamfilm.mynfd.endpoint;
 
-import com.teamfilm.mynfd.exception.AlreadyExistsException;
-import com.teamfilm.mynfd.exception.NotFoundException;
-import com.teamfilm.mynfd.request.user.UserPostRequest;
-import com.teamfilm.mynfd.request.user.UserPutRequest;
-import com.teamfilm.mynfd.request.user.UserRequestMapper;
-import com.teamfilm.mynfd.response.ErrorResponse;
-import com.teamfilm.mynfd.response.Response;
-import com.teamfilm.mynfd.response.user.UserGetResponse;
-import com.teamfilm.mynfd.response.user.UserPostResponse;
-import com.teamfilm.mynfd.response.user.UserPutResponse;
-import com.teamfilm.mynfd.response.user.UserResponseMapper;
+import com.teamfilm.mynfd.response.ApiResponse;
 import com.teamfilm.mynfd.service.user.UserModel;
 import com.teamfilm.mynfd.service.user.UserService;
 import jakarta.validation.Valid;
@@ -19,7 +9,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collections;
 import java.util.List;
 
 @Slf4j
@@ -36,18 +25,9 @@ public class UserEndpoint {
 
 
     @PostMapping("/create")
-    public ResponseEntity<Response> createFilm(@Valid @RequestBody UserPostRequest user) {
-        try {
-            UserModel model = UserRequestMapper.toModel(user);
-            UserModel created = userService.createUser(model);
-            UserPostResponse response = UserResponseMapper.toPostResponse(created);
-            return new ResponseEntity<>(response, HttpStatus.OK);
-        } catch (AlreadyExistsException e) {
-            ErrorResponse response = new ErrorResponse("User Already Exists");
-            return new ResponseEntity<>(response, HttpStatus.PRECONDITION_FAILED);
-        } catch (Exception e) {
-            return new ResponseEntity<>(new ErrorResponse(e.getMessage()), HttpStatus.PRECONDITION_FAILED);
-        }
+    public ResponseEntity<UserModel> createUser(@Valid @RequestBody UserModel user) {
+        UserModel model = userService.createUser(user);
+        return new ResponseEntity<>(model, HttpStatus.CREATED);
     }
 
     @PostMapping("/login")
@@ -62,47 +42,26 @@ public class UserEndpoint {
 
     @GetMapping("/read")
     public ResponseEntity<List<UserModel>> readAllFilms() {
-        try {
-            return new ResponseEntity<>(userService.readAllUsers(), HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity<>(Collections.emptyList(), HttpStatus.OK);
-        }
+        List<UserModel> users = userService.readAllUsers();
+        return new ResponseEntity<>(users, HttpStatus.OK);
     }
 
 
     @GetMapping("/read/{id}")
-    public ResponseEntity<Response> readFilm(@PathVariable("id") String username) {
-        try {
-            UserGetResponse response = userService.readUser(username)
-                    .map(UserResponseMapper::toGetResponse)
-                    .orElseThrow(NotFoundException::new);
-            return ResponseEntity.ok(response);
-        } catch(NotFoundException e) {
-            log.warn("user not found");
-            Response response = new ErrorResponse("User not found!");
-            return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
-        } catch(Exception e) {
-            log.warn(e.getMessage());
-            Response response = new ErrorResponse(e.getMessage());
-            return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
-        }
+    public ResponseEntity<UserModel> readFilm(@PathVariable("id") String username) {
+        UserModel model = userService.readUser(username);
+        return new ResponseEntity<>(model, HttpStatus.OK);
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<Response> updateUser(@Valid @RequestBody UserPutRequest request, @PathVariable("id") String username) {
-        try {
-            UserModel model = UserRequestMapper.toModel(request);
-            UserPutResponse response = UserResponseMapper.toPutResponse(userService.updateUser(model, username));
-            return new ResponseEntity<>(response, HttpStatus.OK);
-        } catch (NotFoundException e) {
-            return new ResponseEntity<>(new ErrorResponse("user not found"), HttpStatus.PRECONDITION_FAILED);
-        } catch (Exception e) {
-            return new ResponseEntity<>(new ErrorResponse(e.getMessage()), HttpStatus.PRECONDITION_FAILED);
-        }
+    public ResponseEntity<UserModel> updateUser(@Valid @RequestBody UserModel user, @PathVariable("id") String username) {
+        UserModel updated = userService.updateUser(user, username);
+        return new ResponseEntity<>(updated, HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deleteUser(@PathVariable("id") String username) {
+    public ApiResponse deleteUser(@PathVariable("id") String username) {
         userService.deleteUser(username);
+        return new ApiResponse("User deleted", true);
     }
 }

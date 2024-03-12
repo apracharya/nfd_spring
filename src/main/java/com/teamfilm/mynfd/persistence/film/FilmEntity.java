@@ -1,12 +1,14 @@
 package com.teamfilm.mynfd.persistence.film;
 
 import com.teamfilm.mynfd.persistence.category.CategoryEntity;
+import com.teamfilm.mynfd.persistence.review.ReviewEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 @Entity
 @Table(name = "films")
@@ -52,5 +54,8 @@ public class FilmEntity {
 
     @ManyToOne
     private CategoryEntity category;
+
+    @OneToMany(mappedBy = "film", cascade = CascadeType.ALL)
+    private Set<ReviewEntity> reviews;
 
 }
