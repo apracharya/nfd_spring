@@ -1,16 +1,17 @@
 package com.teamfilm.mynfd.service.film;
 
-import com.teamfilm.mynfd.exception.NotFoundException;
 import com.teamfilm.mynfd.exception.ResourceNotFoundException;
 import com.teamfilm.mynfd.persistence.category.CategoryEntity;
 import com.teamfilm.mynfd.persistence.category.CategoryRepository;
 import com.teamfilm.mynfd.persistence.film.FilmEntity;
 import com.teamfilm.mynfd.persistence.film.FilmRepository;
 import org.modelmapper.ModelMapper;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.Optional;
 
 @Component
 public class FilmServiceImplementation implements FilmService {
@@ -50,6 +51,19 @@ public class FilmServiceImplementation implements FilmService {
     }
 
     @Override
+    public List<FilmModel> readAllFilms(int pageNumber, int pageSize) {
+
+        Pageable p = PageRequest.of(pageNumber, pageSize);
+
+        Page<FilmEntity> page = filmRepository.findAll(p);
+        List<FilmEntity> films = page.getContent();
+
+        return films.stream()
+                .map(item -> modelMapper.map(item, FilmModel.class))
+                .toList();
+    }
+
+    @Override
     public FilmModel updateFilm(FilmModel film, Integer filmId) {
         FilmEntity entity = filmRepository.findById(filmId)
                 .orElseThrow(() -> new ResourceNotFoundException("Film", "film id", filmId));
@@ -68,14 +82,6 @@ public class FilmServiceImplementation implements FilmService {
 
         FilmEntity updated = filmRepository.save(entity);
         return modelMapper.map(updated, FilmModel.class);
-    }
-
-    @Override
-    public List<FilmModel> readAllFilms() {
-        List<FilmEntity> entity = filmRepository.findAll();
-        return entity.stream()
-                .map(film -> modelMapper.map(film, FilmModel.class))
-                .toList();
     }
 
     @Override

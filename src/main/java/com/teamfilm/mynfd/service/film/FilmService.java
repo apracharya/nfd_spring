@@ -6,7 +6,7 @@ public interface FilmService {
     FilmModel createFilm(FilmModel film, int categoryId);
     FilmModel readFilm(int filmId);
     FilmModel updateFilm(FilmModel film, Integer filmId);
-    List<FilmModel> readAllFilms();
+    List<FilmModel> readAllFilms(int pageNumber, int pageSize);
     void deleteFilm(int filmId);
     List<FilmModel> readFilmsByCategory(int categoryId);
     List<FilmModel> searchFilm(String keyword);

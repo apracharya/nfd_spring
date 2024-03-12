@@ -37,8 +37,11 @@ public class FilmEndpoint {
 
     // read all films
     @GetMapping("/read")
-    public ResponseEntity<List<FilmModel>> readAllFilms() {
-        return new ResponseEntity<>(filmService.readAllFilms(), HttpStatus.OK);
+    public ResponseEntity<List<FilmModel>> readAllFilms(
+            @RequestParam(value = "pageNumber", defaultValue = "0") int pageNumber,
+            @RequestParam(value = "pageSize", defaultValue = "5") int pageSize
+    ) {
+        return new ResponseEntity<>(filmService.readAllFilms(pageNumber, pageSize), HttpStatus.OK);
     }
 
     // read specific film
