@@ -1,12 +1,22 @@
 package com.teamfilm.mynfd.endpoint;
 
+import com.teamfilm.mynfd.config.AppConstants;
 import com.teamfilm.mynfd.response.ApiResponse;
+import com.teamfilm.mynfd.response.FilmResponse;
+import com.teamfilm.mynfd.service.film.FileService;
 import com.teamfilm.mynfd.service.film.FilmModel;
 import com.teamfilm.mynfd.service.film.FilmService;
+import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.StreamUtils;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
 @CrossOrigin
@@ -15,9 +25,14 @@ import java.util.List;
 public class FilmEndpoint {
 
     private final FilmService filmService;
+    private final FileService fileService;
 
-    public FilmEndpoint(FilmService filmService) {
+    @Value("${project.image}")
+    private String path;
+
+    public FilmEndpoint(FilmService filmService, FileService fileService) {
         this.filmService = filmService;
+        this.fileService = fileService;
     }
 
     // create film
@@ -37,8 +52,14 @@ public class FilmEndpoint {
 
     // read all films
     @GetMapping("/read")
-    public ResponseEntity<List<FilmModel>> readAllFilms() {
-        return new ResponseEntity<>(filmService.readAllFilms(), HttpStatus.OK);
+    public ResponseEntity<FilmResponse> readAllFilms(
+            @RequestParam(value = "pageNumber", defaultValue = AppConstants.PAGE_NUMBER, required = false) int pageNumber,
+            @RequestParam(value = "pageSize", defaultValue = AppConstants.PAGE_SIZE, required = false) int pageSize,
+            @RequestParam(value = "sortBy", defaultValue = AppConstants.SORT_BY, required = false) String sortBy,
+            @RequestParam(value = "sortDir", defaultValue = AppConstants.SORT_DIR, required = false) String sortDir
+    ) {
+        FilmResponse response = filmService.readAllFilms(pageNumber, pageSize, sortBy, sortDir);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     // read specific film
@@ -61,5 +82,34 @@ public class FilmEndpoint {
     public ApiResponse deleteFilm(@PathVariable("id") int filmId) {
         filmService.deleteFilm(filmId);
         return new ApiResponse("Film deleted successfully.", true);
+    }
+
+    // search film
+    @GetMapping("/search/{keywords}")
+    public ResponseEntity<List<FilmModel>> searchFilm(@PathVariable("keywords") String keywords){
+        List<FilmModel> result = filmService.searchFilms(keywords);
+        return new ResponseEntity<>(result, HttpStatus.OK);
+    }
+
+    // file image upload
+    @PostMapping("/image/upload/{id}")
+    public ResponseEntity<FilmModel> uploadImage(@RequestParam("image") MultipartFile image,
+                                                 @PathVariable("id") int filmId) throws IOException {
+
+        FilmModel filmModel = filmService.readFilm(filmId);
+        String fileName = fileService.uploadImage(path, image);
+        filmModel.setThumbnailSrc(fileName);
+        FilmModel updateFilm = filmService.updateFilm(filmModel, filmId);
+        return new ResponseEntity<>(updateFilm, HttpStatus.OK);
+    }
+
+    // method to serve file
+    @GetMapping("/image/{thumbnailSrc}")
+    public void downloadImage(@PathVariable("thumbnailSrc") String imageName,
+                              HttpServletResponse response) throws IOException {
+        InputStream resource = fileService.getResource(path, imageName);
+        response.setContentType(MediaType.IMAGE_JPEG_VALUE);
+        StreamUtils.copy(resource, response.getOutputStream());
+
     }
 }

@@ -23,6 +23,7 @@ import java.util.Collections;
 import java.util.List;
 
 @Slf4j
+@CrossOrigin
 @RestController
 @RequestMapping("/category")
 public class CategoryEndpoint {

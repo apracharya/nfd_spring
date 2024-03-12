@@ -1,24 +1,30 @@
 package com.teamfilm.mynfd.persistence.review;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.teamfilm.mynfd.persistence.film.FilmEntity;
+import com.teamfilm.mynfd.persistence.user.UserEntity;
+import jakarta.persistence.*;
+import lombok.*;
 
-@Builder
-@Data
+import java.util.Set;
+
+
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name = "reviews")
 public class ReviewEntity {
     @Id
-    Integer id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
 
     @Column(name = "body")
-    String body;
+    private String body;
+
+    @ManyToOne
+    private FilmEntity film;
+
+    @ManyToOne
+    private UserEntity user;
 }

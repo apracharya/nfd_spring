@@ -1,16 +1,19 @@
 package com.teamfilm.mynfd.service.film;
 
-import com.teamfilm.mynfd.exception.NotFoundException;
 import com.teamfilm.mynfd.exception.ResourceNotFoundException;
 import com.teamfilm.mynfd.persistence.category.CategoryEntity;
 import com.teamfilm.mynfd.persistence.category.CategoryRepository;
 import com.teamfilm.mynfd.persistence.film.FilmEntity;
 import com.teamfilm.mynfd.persistence.film.FilmRepository;
+import com.teamfilm.mynfd.response.FilmResponse;
 import org.modelmapper.ModelMapper;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.Optional;
 
 @Component
 public class FilmServiceImplementation implements FilmService {
@@ -50,6 +53,35 @@ public class FilmServiceImplementation implements FilmService {
     }
 
     @Override
+    public FilmResponse readAllFilms(int pageNumber, int pageSize, String sortBy, String sortDir) {
+
+        // using ternary operator
+        Sort sort = (sortDir.equalsIgnoreCase("asc")
+                ? Sort.by(sortBy).ascending()
+                : Sort.by(sortBy).descending()
+        );
+
+        Pageable p = PageRequest.of(pageNumber, pageSize, sort);
+
+        Page<FilmEntity> page = filmRepository.findAll(p);
+        List<FilmEntity> films = page.getContent();
+
+        List<FilmModel> modelList = films.stream()
+                .map(item -> modelMapper.map(item, FilmModel.class))
+                .toList();
+
+        FilmResponse response = new FilmResponse();
+        response.setContent(modelList);
+        response.setPageNumber(page.getNumber());
+        response.setPageSize(page.getSize());
+        response.setTotalElements(page.getTotalElements());
+        response.setTotalPages(page.getTotalPages());
+        response.setLastPage(page.isLast());
+
+        return response;
+    }
+
+    @Override
     public FilmModel updateFilm(FilmModel film, Integer filmId) {
         FilmEntity entity = filmRepository.findById(filmId)
                 .orElseThrow(() -> new ResourceNotFoundException("Film", "film id", filmId));
@@ -71,14 +103,6 @@ public class FilmServiceImplementation implements FilmService {
     }
 
     @Override
-    public List<FilmModel> readAllFilms() {
-        List<FilmEntity> entity = filmRepository.findAll();
-        return entity.stream()
-                .map(film -> modelMapper.map(film, FilmModel.class))
-                .toList();
-    }
-
-    @Override
     public void deleteFilm(int filmId) {
         FilmEntity film = filmRepository.findById(filmId)
                         .orElseThrow(() -> new ResourceNotFoundException("Film", "film id", filmId));
@@ -96,8 +120,11 @@ public class FilmServiceImplementation implements FilmService {
     }
 
     @Override
-    public List<FilmModel> searchFilm(String keyword) {
-        return null;
+    public List<FilmModel> searchFilms(String keyword) {
+        List<FilmEntity> entity = filmRepository.findByTitleContaining(keyword);
+        return entity.stream()
+                .map(film -> modelMapper.map(film, FilmModel.class))
+                .toList();
     }
 
 
