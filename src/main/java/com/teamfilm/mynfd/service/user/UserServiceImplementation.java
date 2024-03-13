@@ -3,7 +3,6 @@ package com.teamfilm.mynfd.service.user;
 import com.teamfilm.mynfd.exception.AlreadyExistsException;
 import com.teamfilm.mynfd.exception.NotFoundException;
 import com.teamfilm.mynfd.exception.ResourceNotFoundException;
-import com.teamfilm.mynfd.persistence.review.ReviewEntity;
 import com.teamfilm.mynfd.persistence.user.UserEntity;
 import com.teamfilm.mynfd.persistence.user.UserRepository;
 import org.modelmapper.ModelMapper;
@@ -13,7 +12,6 @@ import org.springframework.stereotype.Component;
 import java.util.Base64;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Component
 public class UserServiceImplementation implements UserService {
@@ -30,13 +28,15 @@ public class UserServiceImplementation implements UserService {
 
     @Override
     public UserModel createUser(UserModel user) {
-        UserEntity entity = new UserEntity(
+
+        UserEntity entity = modelMapper.map(new UserModel(
                 user.getUsername(),
                 user.getFirstName(),
                 user.getLastName(),
                 this.passwordEncoder.encode(user.getPassword()),
-                user.getReviews()
-        );
+                user.getRoles()
+        ), UserEntity.class);
+//        UserEntity entity = modelMapper.map(user, UserEntity.class);
 
         if( ! userRepository.existsById(entity.getUsername())) {
             UserEntity created = userRepository.save(entity);
@@ -86,7 +86,8 @@ public class UserServiceImplementation implements UserService {
             String[] userPass = new String(bytePwd).split(":", 2);
             String username = userPass[0];
             String password = userPass[1];
-            UserEntity entity = userRepository.findByUsername(username);
+            UserEntity entity = userRepository.findByUsername(username)
+                    .orElseThrow(() -> new ResourceNotFoundException("User", "with username", username));
             if(entity != null) {
                 String encodedPassword = entity.getPassword();
                 boolean isPwdRight = passwordEncoder.matches(password, encodedPassword);
