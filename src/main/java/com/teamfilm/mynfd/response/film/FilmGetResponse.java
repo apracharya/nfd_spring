@@ -19,6 +19,6 @@ public record FilmGetResponse(String message,
 							  String trailerLink,
 							  List<String> cast,
 							  String director,
-							  String producer) implements Response {
+							  List<String> producer) implements Response {
 
 }

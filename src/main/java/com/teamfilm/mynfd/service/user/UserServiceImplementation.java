@@ -36,7 +36,6 @@ public class UserServiceImplementation implements UserService {
                 this.passwordEncoder.encode(user.getPassword()),
                 user.getRoles()
         ), UserEntity.class);
-//        UserEntity entity = modelMapper.map(user, UserEntity.class);
 
         if( ! userRepository.existsById(entity.getUsername())) {
             UserEntity created = userRepository.save(entity);
@@ -64,7 +63,7 @@ public class UserServiceImplementation implements UserService {
     @Override
     public UserModel updateUser(UserModel userModel, String username) {
         UserEntity user = userRepository.findById(username)
-                .orElseThrow(() -> new NotFoundException("Film with username " + username + " not found"));
+                .orElseThrow(() -> new NotFoundException("User with username " + username + " not found"));
         user.setFirstName(userModel.getFirstName());
         user.setLastName(userModel.getLastName());
         user.setPassword(this.passwordEncoder.encode(userModel.getPassword()));

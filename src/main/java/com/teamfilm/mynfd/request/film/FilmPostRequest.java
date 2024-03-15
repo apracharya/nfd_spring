@@ -16,6 +16,6 @@ public record FilmPostRequest(String title,
 							  String trailerLink,
 							  List<String> cast,
 							  String director,
-							  String producer) {
+							  List<String> producer) {
 
 }
