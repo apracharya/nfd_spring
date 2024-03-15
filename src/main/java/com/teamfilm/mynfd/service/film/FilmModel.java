@@ -1,6 +1,5 @@
 package com.teamfilm.mynfd.service.film;
 
-import com.teamfilm.mynfd.persistence.film.FilmEntity;
 import com.teamfilm.mynfd.service.category.CategoryModel;
 import com.teamfilm.mynfd.service.review.ReviewModel;
 import lombok.Data;
@@ -12,18 +11,19 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 public class FilmModel {
-    int id;
-    String title;
-    String thumbnailSrc;
-    int year;
-    String runtime;
-    String summary;
-    String trailerLink;
-    List<String> cast;
-    double rating;
-    CategoryModel category;
-    String director;
-    String producer;
+    private int id;
+    private String title;
+    private String thumbnailSrc;
+    private int year;
+    private String runtime;
+    private String summary;
+    private String trailerLink;
+    private List<String> cast;
+    private double rating;
+    private CategoryModel category;
+    private String director;
+    private List<String> producer;
+    private String cameraman;
     private Set<ReviewModel> reviews;
 
 }

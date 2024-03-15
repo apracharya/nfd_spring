@@ -40,7 +40,7 @@ public class FilmEntity {
     @Column(name = "trailer_link")
     private String trailerLink;
 
-    @Column(name = "cast")
+    @Column(name = "cast", length = 1000)
     private List<String> cast;
 
     @Column(name = "rating")
@@ -50,7 +50,10 @@ public class FilmEntity {
     private String director;
 
     @Column(name = "producer")
-    private String producer;
+    private List<String> producer;
+
+    @Column(name = "cameraman")
+    private String cameraman;
 
     @ManyToOne
     private CategoryEntity category;

@@ -37,7 +37,7 @@ public class FilmServiceImplementation implements FilmService {
                 .orElseThrow(() -> new ResourceNotFoundException("Category ", "category id", categoryId));
 
         FilmEntity entity = modelMapper.map(film, FilmEntity.class);
-        entity.setThumbnailSrc("default.png");
+//        entity.setThumbnailSrc("default.png");
         entity.setCategory(category);
 
         FilmEntity created = filmRepository.save(entity);

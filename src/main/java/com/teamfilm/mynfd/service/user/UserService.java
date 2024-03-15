@@ -6,7 +6,7 @@ import java.util.List;
 
 @Service
 public interface UserService {
-    UserModel createUser(UserModel film);
+    UserModel createUser(UserModel user);
     UserModel readUser(String username);
 
     List<UserModel> readAllUsers();
