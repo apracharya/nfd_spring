@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.util.StreamUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -21,7 +22,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
-@CrossOrigin
+@CrossOrigin("*")
 @Slf4j
 @RestController
 @RequestMapping("/films")
@@ -39,6 +40,7 @@ public class FilmEndpoint {
     }
 
     // create film
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/create/category/{categoryId}")
     public ResponseEntity<FilmModel> createFilm(@RequestBody FilmModel film, @PathVariable("categoryId") int categoryId) {
         FilmModel model = filmService.createFilm(film, categoryId);
@@ -74,6 +76,7 @@ public class FilmEndpoint {
     }
 
     // update film
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("update/{filmId}")
     public ResponseEntity<FilmModel> updateFilm(@RequestBody FilmModel film, @PathVariable("filmId") int filmId) {
         FilmModel updated = filmService.updateFilm(film, filmId);
@@ -81,6 +84,7 @@ public class FilmEndpoint {
     }
 
     // delete film
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("delete/{id}")
     public ApiResponse deleteFilm(@PathVariable("id") int filmId) {
         filmService.deleteFilm(filmId);

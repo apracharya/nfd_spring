@@ -36,20 +36,47 @@ public class SecurityConfig {
         this.filter = filter;
     }
 
+//    @Bean
+//    public FilterRegistrationBean coresFilter(){
+//        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+//
+//        CorsConfiguration corsConfiguration = new CorsConfiguration();
+//        corsConfiguration.setAllowCredentials(true);
+//        corsConfiguration.addAllowedOrigin("*");
+//        corsConfiguration.addAllowedHeader("Authorization");
+//        corsConfiguration.addAllowedHeader("Content-Type");
+//        corsConfiguration.addAllowedHeader("Accept");
+//        corsConfiguration.addAllowedHeader("POST");
+//        corsConfiguration.addAllowedHeader("GET");
+//        corsConfiguration.addAllowedHeader("DELETE");
+//        corsConfiguration.addAllowedHeader("PUT");
+//        corsConfiguration.addAllowedHeader("OPTIONS");
+//        corsConfiguration.setMaxAge(3600L);
+//
+//        source.registerCorsConfiguration("/**", corsConfiguration);
+//
+//        FilterRegistrationBean bean = new FilterRegistrationBean(new CorsFilter());
+//
+////        bean.setOrder(-110);
+//        return bean;
+//    }
+
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         // configuration
         http.csrf(csrf -> csrf.disable())
-                .cors(cors -> cors.disable())
+//                .cors(cors -> cors.disable())
                 .authorizeHttpRequests(auth -> auth.requestMatchers("/home/**")
                         .authenticated()
                         .requestMatchers("auth/login").permitAll()
                         .requestMatchers("auth/register").permitAll()
                         .requestMatchers("films/read/**").permitAll()
                         .requestMatchers("films/image/**").permitAll()
-                        .requestMatchers("category/**").permitAll()
-                        .anyRequest().permitAll())
+                        .requestMatchers("films/search/**").permitAll()
+                        .requestMatchers("category/read/**").permitAll()
+                        .anyRequest().authenticated())
                 .exceptionHandling(ex -> ex.authenticationEntryPoint(point))
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
         ;
@@ -58,5 +85,9 @@ public class SecurityConfig {
 
         return http.build();
     }
+
+
+
+
 
 }
