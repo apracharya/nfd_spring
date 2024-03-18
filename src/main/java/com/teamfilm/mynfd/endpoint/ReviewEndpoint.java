@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/reviews")
 public class ReviewEndpoint {
@@ -18,7 +18,6 @@ public class ReviewEndpoint {
         this.reviewService = reviewService;
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/film/{filmId}/user/{userId}")
     public ResponseEntity<ReviewModel> createReview(@RequestBody ReviewModel review,
                                                     @PathVariable("filmId") int filmId,

@@ -1,6 +1,8 @@
 package com.teamfilm.mynfd.request.category;
 
-public record CategoryPostRequest(String categoryTitle,
-								  String categoryDescription) {
+import jakarta.validation.constraints.NotEmpty;
+
+public record CategoryPostRequest(@NotEmpty String categoryTitle,
+								  @NotEmpty String categoryDescription) {
 
 }

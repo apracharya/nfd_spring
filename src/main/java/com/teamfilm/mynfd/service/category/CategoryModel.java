@@ -1,6 +1,7 @@
 package com.teamfilm.mynfd.service.category;
 
 import com.teamfilm.mynfd.persistence.category.CategoryEntity;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
 
 @Builder
@@ -11,7 +12,11 @@ import lombok.*;
 public class CategoryModel {
 
     private int categoryId;
+
+    @NotEmpty
     private String categoryTitle;
+
+    @NotEmpty
     private String categoryDescription;
 
 //    public int getCategoryId() {

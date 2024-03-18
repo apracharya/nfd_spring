@@ -1,20 +1,19 @@
 package com.teamfilm.mynfd.service.review;
 
-import com.teamfilm.mynfd.persistence.film.FilmEntity;
-import com.teamfilm.mynfd.persistence.user.UserEntity;
 import com.teamfilm.mynfd.service.user.UserModel;
-import jakarta.persistence.Column;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Data
 @NoArgsConstructor
 public class ReviewModel {
     private int id;
+
+    @NotEmpty
+    @Size(min = 5)
     private String body;
+
     private UserModel user;
 }

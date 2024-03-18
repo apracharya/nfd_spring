@@ -17,13 +17,14 @@ import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
 import java.util.List;
 
 @Slf4j
-@CrossOrigin
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/category")
 public class CategoryEndpoint {
@@ -79,6 +80,7 @@ public class CategoryEndpoint {
         }
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/update/{id}")
     public ResponseEntity<Response> updateCategory(@Valid @RequestBody CategoryPutRequest request, @PathVariable("id") int categoryId) {
         try {
@@ -92,6 +94,7 @@ public class CategoryEndpoint {
         }
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/delete/{id}")
     public void deleteCategory(@PathVariable("id") int categoryId) {
         categoryService.deleteCategory(categoryId);

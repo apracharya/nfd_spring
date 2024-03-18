@@ -7,12 +7,13 @@ import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @Slf4j
-@CrossOrigin
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/users")
 public class UserEndpoint {
@@ -24,6 +25,7 @@ public class UserEndpoint {
     }
 
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/create")
     public ResponseEntity<UserModel> createUser(@Valid @RequestBody UserModel user) {
         UserModel model = userService.createUser(user);
@@ -53,12 +55,14 @@ public class UserEndpoint {
         return new ResponseEntity<>(model, HttpStatus.OK);
     }
 
+//    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/update/{id}")
     public ResponseEntity<UserModel> updateUser(@Valid @RequestBody UserModel user, @PathVariable("id") String username) {
         UserModel updated = userService.updateUser(user, username);
         return new ResponseEntity<>(updated, HttpStatus.OK);
     }
 
+//    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/delete/{id}")
     public ApiResponse deleteUser(@PathVariable("id") String username) {
         userService.deleteUser(username);
