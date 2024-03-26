@@ -2,6 +2,7 @@ package com.teamfilm.mynfd.service.review;
 
 import com.teamfilm.mynfd.service.user.UserModel;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,6 +15,9 @@ public class ReviewModel {
     @NotEmpty
     @Size(min = 5)
     private String body;
+
+    @NotNull
+    private double rating;
 
     private UserModel user;
 }

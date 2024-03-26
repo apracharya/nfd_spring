@@ -1,6 +1,8 @@
 package com.teamfilm.mynfd.endpoint;
 
 //import com.teamfilm.mynfd.security.JWTHelper;
+import com.teamfilm.mynfd.exception.AlreadyExistsException;
+import com.teamfilm.mynfd.exception.NotFoundException;
 import com.teamfilm.mynfd.response.ApiResponse;
 import com.teamfilm.mynfd.security.JWTHelper;
 import com.teamfilm.mynfd.service.JWTRequest;
@@ -53,8 +55,12 @@ public class AuthController {
 
     @PostMapping("/register")
     public ResponseEntity<UserModel> createUser(@Valid @RequestBody UserModel user) {
-        UserModel model = userService.createUser(user);
-        return new ResponseEntity<>(model, HttpStatus.CREATED);
+        try {
+            UserModel model = userService.createUser(user);
+            return new ResponseEntity<>(model, HttpStatus.CREATED);
+        } catch (NotFoundException | AlreadyExistsException e) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
     }
 
     @PostMapping("/login")

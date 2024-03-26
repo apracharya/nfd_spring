@@ -22,9 +22,13 @@ public class ReviewEntity {
     @Column(name = "body")
     private String body;
 
+    @Column(name = "rating")
+    private double rating;
+
     @ManyToOne
     private FilmEntity film;
 
     @ManyToOne
     private UserEntity user;
+
 }
