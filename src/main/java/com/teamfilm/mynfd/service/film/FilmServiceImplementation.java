@@ -95,6 +95,8 @@ public class FilmServiceImplementation implements FilmService {
         entity.setRating(film.getRating());
         entity.setDirector(film.getDirector());
         entity.setProducer(film.getProducer());
+        entity.setCameraman(film.getCameraman());
+
 
 //        entity.setCategory(modelMapper.map(film.getCategory(), CategoryEntity.class));
 

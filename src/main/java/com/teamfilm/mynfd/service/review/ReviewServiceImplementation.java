@@ -43,6 +43,23 @@ public class ReviewServiceImplementation implements ReviewService{
     }
 
     @Override
+    public ReviewModel readReview(int reviewId) {
+        ReviewEntity entity = reviewRepository.findById(reviewId)
+                .orElseThrow(()-> new ResourceNotFoundException("Review", "with id", reviewId));
+        return modelMapper.map(entity, ReviewModel.class);
+    }
+
+    @Override
+    public ReviewModel updateReview(ReviewModel review, int reviewId) {
+        ReviewEntity reviewEntity = reviewRepository.findById(reviewId)
+                .orElseThrow(() -> new ResourceNotFoundException("Review", "with id", reviewId));
+        reviewEntity.setBody(review.getBody());
+        reviewEntity.setRating(review.getRating());
+        ReviewEntity updated = reviewRepository.save(reviewEntity);
+        return modelMapper.map(updated, ReviewModel.class);
+    }
+
+    @Override
     public void deleteReview(int reviewId) {
         ReviewEntity review = reviewRepository.findById(reviewId)
                 .orElseThrow(() -> new ResourceNotFoundException("Review", "with id", reviewId));
