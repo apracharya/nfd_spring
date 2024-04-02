@@ -40,7 +40,7 @@ public class FilmEndpoint {
     }
 
     // create film
-    @PreAuthorize("hasRole('ADMIN')")
+//    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/create/category/{categoryId}")
     public ResponseEntity<FilmModel> createFilm(@RequestBody FilmModel film, @PathVariable("categoryId") int categoryId) {
         FilmModel model = filmService.createFilm(film, categoryId);
