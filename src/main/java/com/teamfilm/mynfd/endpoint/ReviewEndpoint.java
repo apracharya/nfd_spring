@@ -29,7 +29,7 @@ public class ReviewEndpoint {
         FilmModel filmModel = filmService.readFilm(filmId);
 
 //        Random random = new Random();
-//        int randomNumber = random.nextInt(11) + 30;
+//        int randomNumber = random.nextInt(11) + 30; // Random number between 30 and 40
 
 //        double rating = ( randomNumber * filmModel.getRating() + review.getRating()) / (randomNumber+1); // Ensure division results in a floating-point value
 
