@@ -21,9 +21,7 @@ public class JWTHelper {
     public static final long JWT_TOKEN_VALIDITY = 5 * 60 * 60;
 
     //    public static final long JWT_TOKEN_VALIDITY =  60;
-    private String secret = "wewalkedamillionhillsimusthavediedalonealonglongtimeagowhoknowsnotmeineverlostcontrolyourefacetofacewiththemanwhosoldtheworld";
-    // wewalkedamillionhillsimusthavediedalonealonglongtimeagowhoknowsnotmeineverlostcontrolyourefacetofacewiththemanwhosoldtheworld
-    //innocentvictimsofmercilesscrimesfallpreytosomemadmensimpulsivedesignsstepafterstepwetrycontrollingourfatewhenwefinallystartlivingitsbecometoolatetrappedinsidethisoctavarium
+    private String secret = "something";
 
     //retrieve username from jwt token
     public String getUsernameFromToken(String token) {
@@ -35,6 +33,7 @@ public class JWTHelper {
         return getClaimFromToken(token, Claims::getExpiration);
     }
 
+    //innocentvictimsofmercilesscrimesfallpreytosomemadmensimpulsivedesignsstepafterstepwetrycontrollingourfatewhenwefinallystartlivingitsbecometoolatetrappedinsidethisoctavarium
     public <T> T getClaimFromToken(String token, Function<Claims, T> claimsResolver) {
         final Claims claims = getAllClaimsFromToken(token);
         return claimsResolver.apply(claims);
