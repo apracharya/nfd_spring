@@ -1,0 +1,717 @@
+category: 1
+{
+    "thumbnailSrc": "/thumbnails/bijulimachine_poster.jpg",
+	"title": "Loot 2",
+	"year": 2017,
+	"runtime": "2h 10m",
+	"cast": ["Saugat Malla", "Daya Hang Rai", "Karma", "Praween Khatiwada", "Prateek Raj Neupane", "Bipin Karki", "Kameshwor Chaurasiya", "Srijana Subba", "Sushil Raj Pandey", "Pratik Raj Neupane", "Sushil Uprety", "Alisha Rai", "Reecha Sharma"],
+	"director": "Nischal Basnet",
+	"producer": ["Madhav Wagle", "Narendra Maharjan"],
+	"cameraman": "Purushottam Pradhan",
+	"summary": "Four gang members escape from prison and plot revenge against a former colleague, the man who framed them for bank robbery.",
+	"trailerLink": "https://youtu.be/nX2fcXN_Yks?si=GWCvUv0fktojOrZ8",
+	"rating": 3
+},
+
+category: 1
+{
+	"thumbnailSrc": "/thumbnails/bijulimachine_poster.jpg",
+	"title": "Loot",
+	"year": 2012,
+	"runtime": "2h 01m",
+	"cast": ["Saugat Malla", "Daya Hang Rai", "Karma", "Praween Khatiwada", "Prateek Raj Neupane", "Sushil Raj Pandey", "Srijana Subba", "Reecha Sharma", "Kameshwor Chaurasia"],
+	"director": "Nischal Basnet",
+	"producer": ["Madhav Wagle", "Narendra Maharjan"],
+	"cameraman": "Purushottam Pradhan",
+	"summary": "Loot is the story for five guys who find quick ways success and accomplishement. It is a quest for quick money and better life. In a place where the crime rates are ascending day by day, Loot draws a reality check on the present security system of the city. Loot is about relationships: it's about friendship and betrayal. Loot is the real picture of Kathmandu: the city of crime and lawlessness like never explored before.",
+	"trailerLink": "https://youtu.be/QUsgST4Zj5Y?si=RePYhNOyYkwBsfiT",
+	"rating": 4.1
+},
+
+category: 1
+{
+	"thumbnailSrc": "/thumbnails/bijulimachine_poster.jpg",
+	"title": "Chapali Height",
+	"year": 2012,
+	"runtime": "1h 47m",
+	"cast": ["Binita Baral", "Amir Gautam", "Raj Ghimire"],
+	"director": "Dipendra K. Khanal",
+	"producer": ["Arjun Kumar"],
+	"cameraman": "Niraj Kandel",
+	"summary": "Amir and Bineeta come from Pokhara to live in Raj's house at Chapali Height, but the relationship between Amir and Bineeta sours and an accident occurs.",
+	"trailerLink": "https://youtu.be/pNJ7LelfdE4?si=yNMkhOUUYVj-Zrqh",
+    "rating": 2.7
+},
+
+category: 3
+{
+    "title": "Intu Mintu London Ma",
+    "thumbnailSrc": "/thumbnails/Intu-Mintu-London-Ma.jpg",
+    "year": 2018,
+    "runtime": "2h 24m",
+    "summary": "When Ishan and Meera meet by chance through their common friends in London, they unknowingly fall for each other only to discover their fate depends on a difficult choice.",
+    "trailerLink": "https://youtu.be/dCt6o8MyWzk?si=ZB1Ool9wpoW5I_Tf",
+    "cast": ["Samragyee R.L. Shah", "Dhiraj Magar", "Saruk Tamrakar", "Ruby Rana", "Bibek Limbu", "Dilbhushan Pathak", "Sunisha Bajgain"],
+    "rating": 3.5,
+    "director": "Renasha Bantawa Rai",
+    "producer": ["Prabhu S.J.B. Rana"],
+    "cameraman": "Carlos Sellmeyer"
+},
+
+category: 2
+{
+
+	"thumbnailSrc": "/thumbnails/bijulimachine_poster.jpg",
+	"title": "Kalo Pothi",
+	"year": 2015,
+	"runtime": "1h 30m",
+	"cast": ["Khadka Raj Nepali", "Sukraj Rokaya", "Jit Bahadur Malla", "Benisha Hamal", "Nanda Prashad Khatri", "Bipin Karki", "Pravin Khatiwada"],
+	"director": "Min Bahadur Bham",
+	"producer": ["Anna Katchko", "Tsering Rhitar Sherpa", "Min Bahadur Bham", "Debaki Rai", "Catherine Dussart", "Anup Thapa"],
+	"cameraman": "Aziz Zhambakiyev",
+	"summary": "year 2001, a temporary ceasefire brings much-needed break to a small war-torn village in Northern Nepal, bringing much joy among the residents. PRAKASH and KIRAN, two young close friends, are also starting to feel the change in the air. Though they are divided by caste and social creed, they remain inseparable, and start raising a hen gifted by Prakash’s sister, with hopes to save money by selling her eggs. However, the hen goes missing. To find it, they embark on a journey, innocently unaware of the tyranny brought by the fragile ceasefire.",
+	"trailerLink": "https://youtu.be/wS4C8MQUFds?si=5uGGf9jiTHneo4vp",
+    "rating": 3.4
+},
+
+category: 2
+{
+	"thumbnailSrc": "/thumbnails/bijulimachine_poster.jpg",
+	"title": "Homework",
+	"year": 2016,
+	"runtime": "2h 02m",
+	"cast": ["Aryan Sigdel", "Gauri Malla", "Namrata Shrestha"],
+	"director": "Nirak Poudel",
+	"producer": ["Nikita Poudel", "Niraj Poudel", "Nirak Poudel"],
+	"cameraman": "Purushottam Pradhan",
+	"summary": "A story about a rich illiterate businessman and his son who try to navigate his father's business into the modern world.",
+	"trailerLink": "https://youtu.be/X4yF8dfBTC8?si=tYxKeiYCmWrRmLoA",
+    "rating": 4.1
+},
+
+category: 2
+{
+	"thumbnailSrc": "/thumbnails/bijulimachine_poster.jpg",
+	"title": "Saayad",
+	"year": 2012,
+	"runtime": "2h 08m",
+	"cast": ["Samyam Puri", "Sunil Rawal", "Wilson Bikram Rai", "Jharana Thapa", "Babu Bogati"],
+	"director": "Suraj Subba",
+	"producer": ["Sunil Rawal"],
+	"cameraman": "Sanjay Lama",
+	"summary": "Saayad is the story of two generations living together, butexperiencing the world in very different ways. Whereas the influence of a sincere, hardworking friend transforms the lives of a group of friends for the better, the arrogance of, and lack of guidance for the newer generation sets another group of friends on a track of drugs, death and destruction.",
+	"trailerLink": "https://youtu.be/vTtx8rbv-jo?si=xY6FfaRblfa4IBkY",
+    "rating": 3.5
+},
+
+category: 1
+{
+	"thumbnailSrc": "/thumbnails/bijulimachine_poster.jpg",
+	"title": "Dui Rupaiyan",
+	"year": 2017,
+	"runtime": "1h 52m",
+	"cast": ["Nischal Basnet", "Asif Shah", "Buddhi Tamang", "Menuka Pradhan"],
+	"director": "Asim Shah",
+	"producer": ["Asif Shah", "Nischal Basnet"],
+	"cameraman": "Shiva Ram Shrestha",
+	"summary": "The film 'Dui Rupaiyan' entails their quest to find that Rs. 2 and save their necks, all the while saving themselves from local thugs, police, and their boss too.",
+	"trailerLink": "https://youtu.be/166o_vQmpVA?si=g1dMa1kAoJFoBjF7",
+    "rating": 3.5
+},
+
+category: 2
+{
+	"thumbnailSrc": "/thumbnails/bijulimachine_poster.jpg",
+	"title": "Birkhelai Chinchhas",
+	"year": 2014,
+	"runtime": "2h 03m",
+	"cast": ["Subash Thapa", "Binita Khadka", "Aayusha Rai"],
+	"director": "Aaraj Keshav",
+	"producer": ["Subash Thapa"],
+	"cameraman": "Niraj Kandel",
+	"summary": "Birkhey lai Chinchhas tells the story of an ordinary man thrust into extraordinary circumstances, taking him on a journey to discover the hero within himself. Birkhey, a happy-go-lucky simpleton from a Nepali mountain village, is sent off by his villagers to find fame and fortune in the big city. Birkhey lai Chinchhas is a truly Nepali story with a big heart full of innocence, humor and courage.",
+	"trailerLink": "https://youtu.be/VjaBJO-uxEY?si=qHG9MRWWERPy7t1E",
+    "rating": 4.3
+},
+
+category: 2
+{
+	"thumbnailSrc": "c329524b-a618-437b-826e-b776a2335c3e.jpg",
+	"title": "Gaja Baja",
+	"year": 2018,
+	"runtime": "1h 25m",
+	"cast": ["Sushil Sitaula", "Anupam Sharma", "Rabin Jung Thapa", "Barsha Siwakoti", "Uddav Bhattari", "Raksha Shrestha", "Amber Subedi"],
+	"director": "Ganesh Dev Panday",
+	"producer": ["Goma Bista", "Dipendra Regmi"],
+	"cameraman": "Jagopo Raslic",
+	"summary": "Two jobless and carefree friends have a wacky adventure in their youths whist doing illegal stuff in Kathmandu.",
+	"trailerLink": "https://youtu.be/Ado781Bh_BY?si=18J325I0OJoYME92",
+    "rating": 4.2
+},
+
+category: 1
+{
+	"thumbnailSrc": "377c0c36-503a-4d95-b08d-8660b1a19fd8.jpg",
+	"title": "Naaka",
+	"year": 2018,
+	"runtime": "2h 18m",
+	"cast": ["Bipin Karki", "Thinley Lhamo", "Robin Tamang", "Shiva Mukhiya", "Praksah Gandharva"],
+	"director": "Amit Shrestha",
+	"producer": ["Prawin Takki Karki"],
+	"cameraman": "Chintan Raj Bhandari",
+	"summary": "A Tibetan girl Sonam (Thinley Lhamo), who wants to escape to the Dharmashala, India through Nepal to meet her family.",
+	"trailerLink": "https://youtu.be/u2gbhTlEbAE?si=1Ci9xYgWb9A6-zfw",
+    "rating": 3.4
+},
+
+category: 1
+{
+	"thumbnailSrc": "5391c936-229d-474e-b043-05eacd69129a.jpg",
+	"title": "White Sun",
+	"year": 2016,
+	"runtime": "1h 29m",
+	"cast": ["Dayahang Rai", "Asha M. Magrati", "Rabindra Singh Baniya", "Sumi Malla", "Amrit Pariyar"],
+	"director": "Deepak Rauniyar",
+	"producer": ["Deepak Rauniyar", "Joslyn Barnes", "Tsering Rhitar Sherpa", "Michel Merkt"],
+	"cameraman": "Mark Ellam",
+	"summary": "Anti-regime partisan Chandra confronts physical, social and political obstacles for his father's funeral. His search for a solution takes him to neighboring mountain villages and encounters with the police and rebel guerrillas. A portrait of post-civil war Nepal during the fragile deadlocked peace process.",
+	"trailerLink": "https://youtu.be/ADtFVw-AdS0?si=klcoKSNzUgyRvE1P",
+    "rating": 3.5
+},
+
+category: 4
+{
+	"thumbnailSrc": "320f8d62-585c-401d-b3b6-f1bed9c2c0cf.jpg",
+	"title": "Chakka Panja",
+	"year": 2016,
+	"runtime": "2h 19m",
+	"cast": ["Deepak Raj Giri", "Priyanka Karki", "Jitu Nepal", "Kedar Ghimire", "Buddhi Tamang",
+	"Shivahari Paudel", "Barsha Raut", "Kiran KC"],
+	"director": "Deepa Shree Niraula",
+	"producer": ["Nirmal Sharma"],
+	"cameraman": "Purushottam Pradhan",
+	"summary": "Raja who is devoted to the chase gives in to family pressure and gets married but different events unfolds in his and his group of friend's life that gives rise to comedy of errorsand situations.",
+	"trailerLink": "https://youtu.be/msDN-Y0HIME?si=y2iMNl9emm2kE2Hk",
+    "rating": 3.2
+},
+
+category: 4
+{
+	"thumbnailSrc": "13ee4044-9ce5-4f52-afc1-8a88e4b0c097.jpg",
+	"title": "Chakka Panja 2",
+	"year": 2017,
+	"runtime": "2h 11m",
+	"cast": ["Deepak Raj Giri", "Priyanka Karki", "Jitu Nepal", "Kedar Ghimire", "Buddhi Tamang", "Shivahari Paudel", "Barsha Raut", "Kiran KC", "Gaurav Pahari", "Swaroop Purush Dhakal", "Swastima Khadka"],
+	"director": "Deepa Shree Niraula",
+	"producer": ["Bikash Raj Acharya"],
+	"cameraman": "Dirgha Gurung",
+	"summary": "Two virtual strangers, a man and a woman consider entering into a fake marriage to achieve their individual aspirations.",
+	"trailerLink": "https://youtu.be/I8qrKa5uOOg?si=hI9M8fKAq5NTw5vj",
+    "rating": 2.6
+},
+
+category: 4
+{
+	"thumbnailSrc": "28af5285-8121-4316-9f9d-b227f80329ff.jpg",
+	"title": "Chakka Panja 3",
+	"year": 2018,
+	"runtime": "2h 19m",
+	"cast": ["Deepak Raj Giri", "Deepika Prasain","Priyanka Karki", "Jitu Nepal", "Kedar Ghimire", "Buddhi Tamang", "Shivahari Paudel", "Kiran KC", "Neer Shah"],
+	"director": "Deepa Shree Niraula",
+	"producer": ["Kedar Prasad Ghimire", "Jitu Nepal"],
+	"cameraman": "Purushottam Pradhan",
+	"summary": "A headmaster's daughter tries to improve conditions at a government school.",
+	"trailerLink": "https://youtu.be/8t-MTj3XqPM?si=oLJm3uZuefBEuT9n",
+    "rating": 2.5
+},
+
+category: 4
+{
+	"thumbnailSrc": "0e615be7-50bd-4d78-8be3-0d532f6b1ba5.jpg",
+	"title": "Chakka Panja 4",
+	"year": 2023,
+	"runtime": "2h 32m",
+	"cast": ["Deepak Raj Giri", "Deepa Shree Niraula", "Nirmal Sharma", "Kedar Ghimire", "Buddhi Tamang", "Shivahari Paudel", "Kiran KC", "Neer Shah", "Raj Acharya", "Benisha Hamal"],
+	"director": "Hem Raj BC",
+	"producer": ["Dipendra Khaniya", "Kesav Neupane"],
+	"cameraman": "Narendra Mainali",
+	"summary": "Nirvaya Singh is currently the head of one of Nepal's most influential political parties, while his son Dik Vijay is deeply involved in criminal operations. When a political election is going to take place, Nirvaya becomes paralyzed, and Dik Vijay assumes control as president.",
+	"trailerLink": "https://youtu.be/V3tEPolMPKQ?si=EddzAtrCJrRhG2a0",
+    "rating": 3.2
+},
+
+category: 3
+{
+	"thumbnailSrc": "dd9ea9ac-1f82-4633-b1b7-f160f1f32a82.jpg",
+	"title": "November Rain",
+	"year": 2014,
+	"runtime": "2h 12m",
+	"cast": ["Aaryan Sigdel", "Namrata Shrestha", "Chhulthim Gurung", "Keshav Bhattari", "Shishir Rana"],
+	"director": "Dinesh Raut",
+	"producer": ["Subas Giri"],
+	"cameraman": "Rajesh Singh",
+	"summary": "Aayush falls in love with Sheetal at first sight, unaware that fate already had them together somewhere in the past.",
+    "trailerLink": "",
+    "rating": 3.8
+},
+
+category: 3
+{
+	"thumbnailSrc": "248fc36c-f1ab-4db3-b689-941419156fcf.jpg",
+	"title": "Ghamad Shere",
+	"year": 2019,
+	"runtime": "2h 16m",
+	"cast": ["Nischal Basnet", "Swastima Khadka", "Gauri Malla", "Sushma Niraula", "Badal Bhatta", "Lokendra Lekhak", "Saroj Aryal"],
+	"director": "Hem Raj BC",
+	"producer": ["Hem Raj BC", "Simosh Sunuwar"],
+	"cameraman": "Narendra Mainali",
+	"summary": "Shere returns home from Doha to start a farm. He buys this piece of land, but life is not easy. He struggles against nature and man while fighting for survival.",
+	"trailerLink": "https://youtu.be/fTMLFTdSKaY?si=zYmLsbVUDOq0qV9a",
+    "rating":  3.9
+},
+
+category: 4
+{
+	"thumbnailSrc": "1ffccc3d-6fb7-40c0-a56c-9615932db78e.jpg",
+	"title": "Hostel",
+	"year": 2013,
+	"runtime": "2h 32m",
+	"cast": ["Anmol KC", "Prakriti Shrestha", "Salon Basnet", "Sunil Rawal", "Gaurav Pahadi", "B.S Rana"],
+	"director": "Hem Raj BC",
+	"producer": ["Sunil Rawal"],
+	"cameraman": "Hari Humagain",
+	"summary": "The film is about the struggling life of teenagers in hostel. It features love, betrayal, friendship,emotions, family ties and so on.",
+	"trailerLink": "https://youtu.be/uZotbTJqUg0?si=9yNmkBGR8wc25dsN",
+    "rating": 3.1
+},
+
+category: 3
+{
+	"thumbnailSrc": "33451843-be7a-46f5-b37f-488e7eee510b.jpg",
+	"title": "Prem Geet",
+	"year": 2016,
+	"runtime": "2h 17m",
+	"cast": ["Pooja Sharma", "Pradeep Khadka", "Saroj Khanal", "Rupa Rana", "Laxmi Giri", "Norbu Tsering", "Rajaram Poudel"],
+	"director": "Sudarshan Thapa",
+	"producer": ["Santosh Sen"],
+	"cameraman": "Rajesh Shrestha",
+	"summary": "Geet escapes from home because of her grandmother's continuous insistence on marrying. Prem was on his way due to his personal deeds, but he was too pressurized to marry. Both fake their marriage to get rid of continuous insistence, but ultimately fall in love after.",
+	"trailerLink": "https://youtu.be/Z6RnJZFPRF0?si=Yvtn95kSyxgXu3rT",
+    "rating": 3.1
+},
+
+category: 2
+{
+    "title": "Bijuli Machine",
+    "thumbnailSrc": "e34d25e5-3935-4ecb-981e-f6c6f1403bc9.jpg",
+    "year": 2016,
+    "runtime": "1h 44m",
+    "summary": "A story of two responsible minds and their quest for an alternative source of energy in country plunged into darkness and turmoil.",
+    "trailerLink": "https://youtu.be/opB9QrueAdw?si=fzGTDZ8cRkBD-c1g",
+    "cast": ["Jeewan Adhikary", "Rajesh Hamal", "Reliza Shrestha", "Buddhi Tamang", "Abhishek Subedi"],
+    "producer": ["Navin Awal"],
+    "director": "Navin Awal", 
+    "rating": 4.4
+},
+
+category: 3
+{
+    "title": "Ritu",
+    "thumbnailSrc": "5375b7f6-9c70-46da-87a8-d4ad01f8fc3d.jpg",
+    "year": 2014,
+    "rating": 3.6,
+    "runtime": "2h 09m",
+    "summary": "this is a love triangle. A guy and two girls. The two girls are the best of friends and opposite in every way. One is a good, kind, caring, studious type, the other is a hot, narcissistic, impulsive, manipulative kind. The guy swings back and forth between the girls and there are no prizes for guessing whom he ends up with.",
+    "trailerLink": "https://youtu.be/EOKuN2RFGpo?si=eS3GBRTt4dH4ECw0",
+    "cast": ["Raj Ballav Koirala", "Malina Joshi", "Reema Bishwokarma", "Riya Patil", "Anubha Rastogi"],
+    "producer": ["Alp Entertainment"],
+    "director": "Manoj Adhikari" 
+},
+
+category: 1
+{
+	"title": "Chhadke",
+	"thumbnailSrc": "264d59ee-585e-4b6d-8c94-68d0bd2aee16.jpg",
+	"year": 2013,
+	"runtime": "2h 05m",
+	"summary": "This movie is about two politicians who want to be crowned as prime minister but they use gangs to kill each other so they can win.",
+	"trailerLink": "https://youtu.be/YohNHMGvmA8?si=QacFmnjhOY5sDAuh",
+	"cast": ["Robin Tamang", "Bipin Karki", "Saugat Malla", "Dayahang Rai", "Arpan Thapa"],
+	"rating": 3.2,
+	"director": "Nigam Shrestha",
+	"producer": ["Madhav Wagle"]
+},
+
+
+category: 3
+{
+    "title": "Babari",
+    "thumbnailSrc": "37bb5aee-06af-4ea1-8cea-cc79a3b01ed7.jpg",
+    "year": 2022,
+    "runtime": "2h 16m",
+    "summary": "The film starts with a girl traveling to Sikkim from Jhapa, to search of her boyfriend, with the help of her friend who falls in love with her instantly.",
+    "trailerLink": "https://youtu.be/ooSHP6cwnGA?si=hiZxKXpl5cjxSeeG",
+    "cast": ["Aditi Budathoki", "Dhiraj Magar", "Dhiraj Nadkar", "Kamal Mani Nepal", "Abhishek Subedi"],
+    "rating": 3.1,
+    "director": "Surendra Poudel",
+    "producer": ["Ganesh Budathoki"]
+},
+
+category: 2
+{
+    "title": "Pashupati Prasad 2: Bhasme Don",
+    "thumbnailSrc": "906c7ae0-6830-4ef7-b31c-2c052856fa1d.jpeg",
+    "year": 2023,
+    "runtime": "2h 30m",
+    "summary": "Bhashme struggles to collect 10 lakhs rupees after learning that he'll get to meet his parents whom he has never seen. When Bhashme collects 10 lakhs of rupees after working in various ways, his friends steal his hard earned money from him. Bhashme starts a struggle with the aim of bringing back the ten lakh rupees taken from him and meeting his parents.",
+    "trailerLink": "https://youtu.be/J3tXwmZXQNk?si=pdOF7wD3xE9DS2H3",
+    "cast": ["Bipin Karki", "Swastima Khadka", "Saugat Malla", "Barsha Siwakoti", "Rabindra Singh Baniya"],
+    "rating": 3.6,
+    "director": "Dipendra K. Khanal",
+    "producer": ["Khagendra Lamichhane"]
+},
+
+category: 3
+{
+	"title": "Dhanapati",
+	"thumbnailSrc": "11d22abc-c0d1-4db0-90e0-5bba54085e94.jpg",
+	"year": 2017,
+	"runtime": "1h 52m",
+	"cast": ["Khagendra Lamichhane", "Surkashya Panta", "Manish Niraula", "Aashant Sharma", "Surabi Bartaula", "Harihar Sharma", "Rabi Giri", "Kamal Devkota", "Prakash Ghimire"],
+	"director": "Dipendra K. Khanal",
+	"producer": ["Rojina Sitaula"],
+	"cameraman": "Dipendra K. Khanal",
+	"summary": "Dhanapati wants to fulfill the dreams of his family, especially his daughter. Eventually, he is compelled to choose a path that already has produced dire consequences. It leads him to a point where he is helpless to get his happy life back.",
+	"trailerLink": "https://www.youtube.com/embed/80zKdSyEQok",
+    "rating": 3.7
+},
+
+category: 3
+{
+	"thumbnailSrc": "da6e91df-34a4-43f3-894f-acc6c709f4a0.jpg",
+	"title": "Kabaddi Kabaddi Kabaddi",
+	"year": 2015,
+	"runtime": "1h 54m",
+	"cast": ["Dayahang Rai", "Upasana Singh Thakuri", "Rishma Gurung", "Karma", "Wilson Bikram Rai", "Buddhi Tamang", "Bijaya Baral", "Puskar Gurung", "Kabita Ale", "Maotse Gurung", "Loonibha Tuladhar", "Kamal Mani Nepal", "Aruna Karki"],
+	"director": "Ram Babu Gurung",
+	"producer": ["Mani Ram Pokharel", "Arjun Karki", "Om Chand Rauniyar"],
+	"cameraman": "Shailendra D. Karki",
+	"summary": "Kaji tries to live rest of his life with Maiya's memories but he falls in love with another girl.",
+	"trailerLink": "https://www.youtube.com/embed/c4HswWvFzWY",
+    "rating": 3.15
+},
+
+category: 3
+{
+	"thumbnailSrc": "1735e978-2957-46d1-a3b1-0c351731db60.jpg",
+	"title": "Kabaddi Kabaddi",
+	"year": 2015,
+	"runtime": "2h 14m",
+	"cast": ["Dayahang Rai", "Saugat Malla", "Rishma Gurung", "Bijay Baral", "Buddhi Tamang", "Maotse Gurung", "Upendra Subba", "Shisheer Bangdel", "Pushkar Gurung", "Kabita Ale", "Birmaya Gurung", "Aruna Karki"],
+	"director": "Ram Babu Gurung",
+	"producer": ["Raunak Bikram Kandel", "Sunil Chand Rauniyar"],
+	"cameraman": "Shailendra D. Karki",
+	"summary": "Kaji dreams of marrying Maiya but things go wrong when Bamkaji returns to the village who also wants to marry Maiya.",
+	"trailerLink": "https://www.youtube.com/embed/_aqNQY5zfZQ",
+    "rating": 3.9
+},
+
+category: 1
+{
+	"thumbnailSrc": "683b9fec-02e6-4fc8-bb11-c4636ae50bcf.jpg",
+	"title": "Chapali Height 2",
+	"year": 2019,
+	"runtime": "1h 53m",
+	"cast": ["Ayushman Joshi", "Mariska Pokharel", "Paramita RL Rana", "Rear Rai", "Muna Gauchan"],
+	"director": "Dipendra K. Khanal",
+	"producer": ["Arjun Kumar"],
+	"cameraman": "Niraj Kadel",
+	"summary": "Abhiman Jung Shahi is a rich and spoiled man whose lifestyle revolves around casual sex. He decides to change his promiscuous ways when he falls in love with Aakriti. After much persuasion, Aakriti is impressed with the change in his behaviour and starts dating him. Their relationship deteriorates when Abhiman begins seeing his former girlfriend Nisha Joshi.",
+	"trailerLink": "https://www.youtube.com/embed/SejdV0ytxA0",
+    "rating": 3.1
+},
+
+category: 3
+{
+	"thumbnailSrc": "086be9cd-f209-4bb5-9f7d-50a8ff72f697.jpg",
+	"title": "Kabaddi",
+	"year": 2014,
+	"runtime": "1h 50m",
+	"cast": ["Daya Hang Rai", "Nishchal Basnet", "Rishma Gurung", "Rajan Khatiwada", "Buddhi Tamang", "Bijay  Baral", "Pushkar Gurung", "Kabita Ale", "Aruna Karki", "Pashupati Rai", "Shishir Wangtel"],
+	"director": "Ram Babu Gurung",
+	"producer": ["Nishchal Basnet", "Sunil Chand Rouniyar"],
+	"cameraman": "Purshottam Pradhan",
+	"summary": "Kaji a young aimless man dreams of marrying Maiya, a village girl by any means although she wants to go to the city for higher education. Their lives are thrown into turmoil with the arrival of Bibek, a charming young man from the city.",
+	"trailerLink": "https://www.youtube.com/embed/QPsblfsA_0w",
+    "rating": 4.1
+}
+
+category: 4
+{
+	"thumbnailSrc": "c6ecd7e4-c278-4181-a054-be7a60bbf023.JPG",
+	"title": "Harry Ki Pyari",
+	"year": 2023,
+	"runtime": "2h 16m",
+	"cast": ["Jitu Nepal", "Samragyee RL Shah", "Bijay Baral", "Laxmi Giri", "Subash Gajurel", "Ranjana Bhattarai", "Sarala Rijal"],
+	"director": "Dr. Kapil Rijal",
+	"producer": ["Dr. Bhola Rijal"],
+	"cameraman": "Rabindra Neupane",
+	"summary": "Harry and his 'Pyaari' Jenny, are chasing similar goals in life, but the extent to which they both go about to achieve this is unimaginable.",
+	"trailerLink": "https://www.youtube.com/embed/LUEjJuMKATM",
+    "rating": 4
+},
+
+category: 4
+{
+	"thumbnailSrc": "90d30f2f-4aeb-4f41-9868-332a15c35b3b.jpg",
+	"title": "Dui Nambari",
+	"year": 2022,
+	"runtime": "2h 21m",
+	"cast": ["Dayahang Rai", "Saugat Malla", "Ugyen Choden", "Upasana Singh Thakuri", "Buddhi Tamang", "Puskar Gurung", "Shreyash Poudel", "Sharada Giri", "Kabita Ale"],
+	"director": "Ram Sharan Pathak",
+	"producer": ["Santosh Sen"],
+	"cameraman": "Sushan Prajapati",
+	"summary": "As two friends get into hunting for a living in a small village in rural Nepal, their lives take a turn when a Nepali-speaking Bhutanese woman arrives there.",
+	"trailerLink": "https://www.youtube.com/embed/wo5AGk05DN0",
+    "rating": 3.8
+},
+
+category: 3
+{
+	"thumbnailSrc": "ce68c3be-9e8b-4124-b371-a5b7c4f89a59.jpg",
+	"title": "Dreams",
+	"year": 2016,
+	"runtime": "2h 15m",
+	"cast": ["Anmol Kc", "Samragyee Rajya Laxmi Shah", "Sandhya Kc", "Ratna Raut", "Manoj Kumar Shrestha"],
+	"director": "Bhuwan Kc",
+	"producer": ["Bhuwan Kc", "DR.Kapil Rijal", "Bhanu Phuyel", "Satyanarayan Keyal"],
+	"cameraman": "Prushottam Pradhan",
+	"summary": "Aveer in his childhood loses his father to an accident which he claims he had seen in a dream. A grown up Aveer sees a dream where his love, Kavya dies in a car accident and tries everything to let this dream not come true.",
+	"trailerLink": "https://www.youtube.com/embed/GIh38wkkPZY",
+    "rating": 2.6
+},
+
+category: 3
+{
+	"thumbnailSrc": "bf50fe42-283f-42d4-84a1-a81f2f44a33a.jpg",
+	"title": "Prem Geet 3",
+	"year": 2012,
+	"runtime": "2h 10m",
+	"cast": ["Pradeep Khadka", "Kristina Gurung", "Shiva Shrestha", "Sunil Thapa", "Santosh Sen", "Maotse Gurung",  "Manish Raut", "Puskar Karki", "Prem Puri", "Anubhav Regmi", "Yogisha Khatri"],
+	"director": "Ram Sharan Pathak",
+	"producer": ["Santosh Sen"],
+	"cameraman": "Rajesh Shrestha",
+	"summary": "After being born during an auspicious astrological time, Prem, the younger prince of the Kingdom of Khazaag who is destined to be king must overcome his biggest obstacle in life, love.",
+	"trailerLink": "https://www.youtube.com/embed/XYw5eosrB7k",
+    "rating": 3.7
+},
+
+category: 1
+{
+	"thumbnailSrc": "5316c631-5cf5-4228-9d83-5f59966d6f00.jpg",
+	"title": "Sadanga",
+	"year": 2015,
+	"runtime": "2h 20m",
+	"cast": ["Vijay Lama", "Saugat Malla", "Anup Baral", "Priyanka Karki", "Sauram Raj Tuladhar", "A. Gurung", "Nabin Manandhar"],
+	"director": "Suraj Sunuwar",
+	"producer": ["Samir Sunuwar"],
+	"cameraman": "Narendra Mainali",
+	"summary": "Kalu Yadav is gangster who works under Criminal Businesses man Raja. Kalu bails out his friend Vicky from prison and they both decide to work together. Raja works with Indian gangster Malik Bhai in illegal smuggling of drugs.",
+	"trailerLink": "https://www.youtube.com/embed/xyJaPDjB2eI",
+    "rating": 4
+}
+
+category: 2
+{
+	"thumbnailSrc": "d2b86365-280e-45e1-97d5-f4c0822e2b8f.jpg",
+	"title": "Jerryy",
+	"year": 2014,
+	"runtime": "1h 56m",
+	"cast": ["Anmol K.C." , "Anna Sharma", "Amalia Sharma", "Abhishek Man Sherchan", "Yash SJB Rana"],
+	"director": "Hemraj B.C",
+	"producer": ["Manoj Sherchan"],
+	"cameraman": "Shailendra D Karki",
+	"summary": "A wealthy young playboy who is devoted to the chase and a bit of a player, finally meets his match. In a sudden change of circumstances, Jerryy decides it is time to settle down.",
+	"trailerLink": "https://www.youtube.com/embed/nISxeJnG9qw",
+    "rating": 2.8
+},
+
+category: 4
+{
+	"thumbnailSrc": "1c91150a-2ca4-4ae5-87e3-b145261fbdb6.jpg",
+	"title": "Lukamari",
+	"year": 2016,
+	"runtime": "2h 05m",
+	"cast": ["Saugat Malla", "Karma", "Bikram Singh Tharu", "Surabina Karki", "Rista Basnet", "Krishna Bhakta Maharjan", "J.B. D.C.", "Pravan Bhusal", "Kushal Bista", "Basanta Bhatta", "Prakash Paudel"],
+	"director": "Shree Ram Dahal",
+	"producer": ["Suraj Man Singh Bhandari"],
+	"cameraman": "Sushan Prajapati",
+	"summary": "Based on a police investigation of a murder case of a school girl Rupa K.C. The case gets connected to the tenants of Musya Sahu and the hide and seek between cops and criminals starts. Two undercover veteran crime investigating agents meet co-incidentally and start sharing a same room in some place in Kathmandu valley.",
+	"trailerLink": "https://www.youtube.com/embed/vE2uVWme43k",
+    "rating": 3.4
+},
+
+category: 2
+{
+	"thumbnailSrc": "602e7be5-2d39-433f-9cc5-0822eecbdf07.jpg",
+	"title": "Saino",
+	"year": 1987,
+	"runtime": "2h 34m",
+	"cast": ["Bhuwan KC", "Tripti Nadkar", "Danny Denzongpa", "Muralidhar", "K.B Moktan", "Pukar Gurung", "Mukunda Shrestha", "Kalpana Rana", "Phurba Lama"],
+	"director": "Ugyen Chopel",
+	"producer": ["Malati Rai"],
+	"cameraman": "Munir Khan",
+	"summary": "Tripti is married to Bhuwan K.C. and they have a son (Raksha). Bhuwan leaves his family for another woman, who happens to be Danny’s wife. Danny comes to stay at Tripti’s house. He develops a strong friendship with Tripti’s son. Tripti finally accepts Danny to be her own.",
+    "rating": 4
+},
+
+category: 3
+{
+	"thumbnailSrc": "d7a03e37-4feb-497c-bf28-2054e828c81f.jpg",
+	"title": "Prem Geet 2",
+	"year": 2022,
+	"runtime": "2h 25m",
+	"cast": ["Pradeep Khadka", "Aaslesha Thakuri", "Kailash Katuwal", "Kabita Regmi", "Sishir Bhandari", "Kumar Karki", "Mukta Babu Acharya", "Shraddha Prasai"],
+	"director": "Ram Sharan Pathak",
+	"producer": ["Santosh Sen"],
+	"cameraman": "Purushottam Pradhan",
+	"summary": "Prem and Geet journey from Burma to Martha.",
+	"trailerLink": "https://www.youtube.com/embed/XhT1J147hKk",
+    "rating": 3.45
+},
+
+category: 3
+{
+	"thumbnailSrc": "1b8d1ef8-c149-4ee5-aa4c-17784d1fb448.jpg",
+	"title": "Mero Euta Sathi Chha",
+	"year": 2009,
+	"runtime": "2h 41m",
+	"cast": ["Aryan Sigdel", "Namrata Shrestha", "Jiwan Luitel", "Dayahang Rai", "Keshab Bhattarai", "Naresh Paudyal", "B.S Rana", "Zenisha Moktan", "Mahadev Tripathi", "Sushma Karki", "Pratishtha Prasai", "Ashok Sharma"],
+	"director": "Sudarshan Thapa",
+	"producer": ["Prabhu Shamsher"],
+	"cameraman": "Rajesh Singh",
+	"summary": "Jay is too spoiled to inherit his grand father's vast wealth. When he falls to graduate from college, his grandfather's will sends him back to his ancestral village where, long ago, he had made a friend. Sikha, Jay's estranged childhood friend, helps Jay rediscover his humanity. But Shikha is very sick. She shares her dreams with Jay - to rebuild the orphanage where she lives.",
+	"trailerLink": "https://www.youtube.com/embed/0JVZSvNKTCM",
+    "rating": 3.6
+},
+
+category: 3
+{
+	"thumbnailSrc": "b19140fc-7760-4b41-9a19-b05de850bd13.jpg",
+	"title": "Ke Ma Timro Sathi Banna Sakchhu",
+	"year": 2012,
+	"runtime": "2h 22m",
+	"cast": ["Aryan Sigdel", "Dipti Giri", "Kamala Regmi", "Jiten Lama", "Dhiren Shakya", "Dinesh DC", "Shishir Rana", "Sandeep Sapkota"],
+	"director": "Shabir Shrestha",
+	"producer": ["Krisha Chaulagain"],
+	"cameraman": "Shiva Dhakal",
+	"summary": "Troublemaker Ankit tries to win the heart of his dream girl, Ichhya. But, problems arise as Ankit is put on a test where he must choose between his best friend, family and love.",
+	"trailerLink": "https://www.youtube.com/embed/B4CzUDoSpjc"
+},
+
+category: 2
+{
+	"thumbnailSrc": "5eebaa9c-2811-48c4-9324-d5250bb3b4e0.jpg",
+	"title": "Fulbari",
+	"year": 2023,
+	"runtime": "1h 37m",
+	"cast": ["Bipin Karki", "Aruna Karki", "Daya Hang Rai", "Priyanka Karki", "Gaumaya Gurung", "Shilpa Maskey"],
+	"director": "Ram Babu Gurung",
+	"producer": ["Manish Dhakal"],
+	"cameraman": "Josh Herum",
+	"summary": "A family is challenged by a mothers health condition and the three grown sons are too busy with their own lives to truly be there for their mom and dad.",
+	"trailerLink": "https://www.youtube.com/embed/gnuTqK0E6EE",
+	"rating": 3.55
+},
+
+category: 2
+{
+	"thumbnailSrc": "e5684cfa-b241-4729-b9e2-721b7a399a5e.webp",
+	"title": "Appa",
+	"year": 2019,
+	"runtime": "1h 37m",
+	"cast": ["Daya Hang Rai", "Siddarth Raj Tamang", "Allona Kabo Lepcha", "Tulsi Ghimiray", "Aruna Karki"],
+	"director": "Anmol Gurung",
+	"producer": ["Ruden Sada Lepcha"],
+	"cameraman": "Shailendra D. Karki",
+	"summary": "A dramatic tale of a father and his children.",
+	"trailerLink": "https://www.youtube.com/embed/BxSLUU2TL0A",
+    "rating": 0.0
+},
+
+category: 3
+{
+	"thumbnailSrc": "0a10108e-c22c-43fe-8420-b98f81e32c3a.jpg",
+	"title": "Love Sasha",
+	"year": 2017,
+	"runtime": "1h 42m",
+	"cast": ["Karma", "Keki Adhikari", "Shivani Chalise", "Rashmi Bhatta", "Bikash Joshi", "Asif Shah"],
+	"director": "Prachanda M Shrestha",
+	"producer": ["Madhav Wagle"],
+	"cameraman": "Shiva Ram Shrestha",
+	"summary": "A girl starts to develop a afair with a young man while waiting to get engaged with her long time boyfriend.",
+	"trailerLink": "https://www.youtube.com/embed/d6dNbkB6hC4",
+    "rating": 3.6
+},
+
+category: 3
+{
+	"thumbnailSrc": "9ee4b178-bddf-4882-8e2a-d3b5e5c41bfb.jpg",
+	"title": "Sano Sansar",
+	"year": 2008,
+	"runtime": "2h 24m",
+	"cast": ["Karma", "Vinay Shrestha", "Namrata Shrestha", "Jiwan Luitel", "Arjun Shrestha", "Sushila Rayamajhi", "Subash Thapa", "Puskar Gurung", "Nir Shah"],
+	"director": "Alok Nembang",
+	"producer": ["Nakim Uddin", "Rajesh Siddhi", "Bhaskar Dhungana"],
+	"cameraman": "Dhiraj Jung Shah",
+	"summary": "Ravi is a average guy who has just graduated from college. Like most average guy, he doesn't know what he wants in life. Reetu is a not so average girl knows what she doesn't want.",
+	"trailerLink": "https://www.youtube.com/embed/LFFdGZX9OrE",
+    "rating": 3.55
+},
+
+category: 2
+{
+	"title": "Chiso Ashtray",
+	"year": 2022,
+	"runtime": "2h 22m";
+	"summary": "Chiso Ashtray' is a postmodern drama about an innocent village guy freshly arrived in the capital city. His transformation from villager to urban man becomes increasingly difficult because trying to be modern takes him away from who he truly is."
+	"cast": ["Shristhi Shrestha", "Robin Tamang", "Divya Dev", "Nikun Shrestha", "Rinex Basnet", "Sushil Raj Pandey", "Nabin Lamsal"]
+	"director": "Dinesh Palpali",
+	"producer": ["Susmita Parajuli", "Prabin Syangbo", "Mahesh Babu Timalsina"],
+	"cameraman": "Ujjal Bastakoti",
+	"trailerLink": "https://www.youtube.com/embed/FcK9tKJbXtQ",
+	"rating": 2.85
+}
+
+category: 3
+{
+	"title: "Nai Nabhannu La 5",
+	"year": 2018,
+	"runtime": "2h 08m",
+	"cast": ["Anubhav Regmi", "Sedrina Sharma", "Priyanka Karki", "Swastima Khadka", "Abhishek Nepal", "Keki Adhikari", "Buddhi Tamang"]
+	"summary": "From young age Neer and Anjana were in love however Anjana dies at young age. Than after many years later Anjana's twin sister falls in love with older Neer, however Neer isn't interested in her."
+	"director": "Bikash Raj Acharya",
+	"cameraman": "Sonam Renchhen Lama",
+	"producer": ["Haribol Bandar", "Gauri Raj Joshi"],
+	"trailerLink": "https://www.youtube.com/embed/rauujlVEZPE",
+	"rating": 3.25
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
