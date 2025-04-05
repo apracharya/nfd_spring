@@ -20,4 +20,7 @@ public class ReviewModel {
     private double rating;
 
     private UserModel user;
+
+    private int upvotes;
+    private int downvotes;
 }

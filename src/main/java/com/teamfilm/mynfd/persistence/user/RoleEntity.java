@@ -12,7 +12,6 @@ public class RoleEntity {
 
     @Id
     private int id;
-
     private String name;
 
 }

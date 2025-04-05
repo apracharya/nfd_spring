@@ -12,7 +12,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ReviewServiceImplementation implements ReviewService{
+public class ReviewServiceImplementation implements ReviewService {
 
     private final ReviewRepository reviewRepository;
     private final FilmRepository filmRepository;
@@ -20,7 +20,7 @@ public class ReviewServiceImplementation implements ReviewService{
     private final UserRepository userRepository;
 
     public ReviewServiceImplementation(ReviewRepository reviewRepository, FilmRepository filmRepository,
-                                       ModelMapper modelMapper, UserRepository userRepository) {
+            ModelMapper modelMapper, UserRepository userRepository) {
         this.reviewRepository = reviewRepository;
         this.filmRepository = filmRepository;
         this.modelMapper = modelMapper;
@@ -31,7 +31,7 @@ public class ReviewServiceImplementation implements ReviewService{
     public ReviewModel createReview(ReviewModel review, int filmId, String username) {
 
         FilmEntity film = filmRepository.findById(filmId)
-                .orElseThrow(()-> new ResourceNotFoundException("Film", "with id", filmId));
+                .orElseThrow(() -> new ResourceNotFoundException("Film", "with id", filmId));
         UserEntity user = userRepository.findById(username)
                 .orElseThrow(NotFoundException::new);
         ReviewEntity reviewentity = modelMapper.map(review, ReviewEntity.class);
@@ -45,7 +45,7 @@ public class ReviewServiceImplementation implements ReviewService{
     @Override
     public ReviewModel readReview(int reviewId) {
         ReviewEntity entity = reviewRepository.findById(reviewId)
-                .orElseThrow(()-> new ResourceNotFoundException("Review", "with id", reviewId));
+                .orElseThrow(() -> new ResourceNotFoundException("Review", "with id", reviewId));
         return modelMapper.map(entity, ReviewModel.class);
     }
 
@@ -64,5 +64,24 @@ public class ReviewServiceImplementation implements ReviewService{
         ReviewEntity review = reviewRepository.findById(reviewId)
                 .orElseThrow(() -> new ResourceNotFoundException("Review", "with id", reviewId));
         reviewRepository.delete(review);
+    }
+
+    @Override
+    public int upvoteReview(int reviewId) {
+        ReviewEntity reviewEntity = reviewRepository.findById(reviewId)
+                .orElseThrow(() -> new ResourceNotFoundException("Review", "with id", reviewId));
+        reviewEntity.setUpvote(reviewEntity.getUpvote() + 1);
+        ReviewEntity saved = reviewRepository.save(reviewEntity);
+        return saved.getUpvote();
+    }
+
+    @Override
+    public int downvoteReview(int reviewId) {
+        ReviewEntity reviewEntity = reviewRepository.findById(reviewId)
+                .orElseThrow(() -> new ResourceNotFoundException("Review", "with id", reviewId));
+        reviewEntity.setDownvote(reviewEntity.getDownvote() + 1);
+        ReviewEntity saved = reviewRepository.save(reviewEntity);
+        return saved.getDownvote();
+
     }
 }

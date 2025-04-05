@@ -25,6 +25,10 @@ public class ReviewEntity {
     @Column(name = "rating")
     private double rating;
 
+    private int upvote;
+
+    private int downvote;
+
     @ManyToOne
     private FilmEntity film;
 

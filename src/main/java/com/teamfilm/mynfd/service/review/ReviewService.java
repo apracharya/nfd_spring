@@ -5,4 +5,6 @@ public interface ReviewService {
     ReviewModel readReview(int reviewId);
     ReviewModel updateReview(ReviewModel review, int reviewId);
     void deleteReview(int reviewId);
+    int upvoteReview(int reviewId);
+    int downvoteReview(int reviewId);
 }

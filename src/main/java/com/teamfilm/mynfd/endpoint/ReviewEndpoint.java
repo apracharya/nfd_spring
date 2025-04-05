@@ -59,4 +59,18 @@ public class ReviewEndpoint {
         return new ResponseEntity<>(reviewModel, HttpStatus.OK);
     }
 
+    @PutMapping("/upvote/{reviewId}")
+    public ResponseEntity<Integer> upvoteReview(@PathVariable("reviewId") int reviewId) {
+        int upvotes = reviewService.upvoteReview(reviewId);
+        return new ResponseEntity<>(upvotes, HttpStatus.OK);
+    }
+
+    @PutMapping("/downvote/{reviewId}")
+    public ResponseEntity<Integer> downvoteReview(@PathVariable("reviewId") int reviewId) {
+        int downvotes = reviewService.downvoteReview(reviewId);
+        return new ResponseEntity<>(downvotes, HttpStatus.OK);
+    }
+
+
+
 }

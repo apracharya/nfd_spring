@@ -20,6 +20,9 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 @CrossOrigin("*")
@@ -102,6 +105,15 @@ public class FilmEndpoint {
     @PostMapping("/image/upload/{id}")
     public ResponseEntity<FilmModel> uploadImage(@RequestParam("image") MultipartFile image,
                                                  @PathVariable("id") int filmId) throws IOException {
+        // lets make sure image has been sent.
+        if(image.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        String contentType = image.getContentType();
+
+        if(contentType == null || !contentType.startsWith("image/")) {
+            return new ResponseEntity<>(HttpStatus.UNSUPPORTED_MEDIA_TYPE);
+        }
 
         FilmModel filmModel = filmService.readFilm(filmId);
         String fileName = fileService.uploadImage(path, image);
@@ -111,16 +123,39 @@ public class FilmEndpoint {
     }
 
     // method to serve file
+//    @GetMapping("/image/{thumbnailSrc}")
+//    public void downloadImage(@PathVariable("thumbnailSrc") String imageName,
+//                              HttpServletResponse response) throws IOException {
+//        try {
+//            InputStream resource = fileService.getResource(path, imageName);
+//            response.setContentType(MediaType.IMAGE_JPEG_VALUE);
+//            StreamUtils.copy(resource, response.getOutputStream());
+//        } catch (FileNotFoundException e) {
+//            log.warn("File {}", imageName);
+//        }
+//
+//    }
+
     @GetMapping("/image/{thumbnailSrc}")
     public void downloadImage(@PathVariable("thumbnailSrc") String imageName,
                               HttpServletResponse response) throws IOException {
-        try {
-            InputStream resource = fileService.getResource(path, imageName);
-            response.setContentType(MediaType.IMAGE_JPEG_VALUE);
-            StreamUtils.copy(resource, response.getOutputStream());
-        } catch (FileNotFoundException e) {
-            log.warn("File {}", imageName);
+        Path filePath = Paths.get(path, imageName);
+
+        if (!Files.exists(filePath)) {
+            response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+            return;
         }
 
+        try (InputStream resource = fileService.getResource(path, imageName)) {
+            String contentType = Files.probeContentType(filePath);
+            response.setContentType(contentType != null ? contentType : MediaType.APPLICATION_OCTET_STREAM_VALUE);
+            StreamUtils.copy(resource, response.getOutputStream());
+        } catch (FileNotFoundException e) {
+            log.warn("File not found: {}", imageName);
+            response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+        } catch (SecurityException e) {
+            log.error("Security warning: {}", e.getMessage());
+            response.setStatus(HttpServletResponse.SC_FORBIDDEN);
+        }
     }
 }
